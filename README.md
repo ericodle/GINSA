@@ -121,15 +121,33 @@ Number of occurrences found: 26
 ```
 
 GINSA will then proceed with the analysis, informing you of each step being performed in real time.
-### Enter your project directory and species of interest
+Note: Analysis time depends on internet connection speed and the number of occurrences in GBIF.
 
-Text here....
+## Completion of Analysis
 
-   ```sh
-   # ???
-   ????
-   ```
-?????
+When GINSA completes its process, you will find that your project folder now contains a unique sub-folder for each occurrence found, as well as some other files. <br \>
+
+Those other files include:
+
+- [ ] occurrences.csv
+
+  What is it?
+
+- [ ] seq_master.fasta
+
+What is it?
+
+- [ ] nucleotide_frequencies.png
+
+What is it?
+
+- [ ] sequence_lengths.png
+
+What is it?
+
+- [ ] sifting_results.png
+
+What is it?
 
 
 ## Functions
