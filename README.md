@@ -135,28 +135,28 @@ Below is a description of each output file, using the search term "Lecudina long
 
   What is it?
 
-  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/sifting_results.png" alt="seq_master.fasta" width="400" height="200">
+  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/sifting_results.png" alt="seq_master.fasta" width="350" height="350">
 
 - [ ] sequence_lengths.png
 
   What is it?
 
-  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/sequence_lengths.png" alt="seq_master.fasta" width="400" height="200">
+  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/sequence_lengths.png" alt="seq_master.fasta" width="350" height="350">
 
 
 - [ ] nucleotide_frequencies.png
 
   What is it?
 
-  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/nucleotide_frequencies.png" alt="seq_master.fasta" width="400" height="200">
+  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/nucleotide_frequencies.png" alt="seq_master.fasta" width="350" height="350">
   
 
-- [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/occurrences.csv" alt="occurrences.csv" width="400" height="350">
+- [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/occurrences.csv" alt="occurrences.csv" width="350" height="350">
 
   What is it?
 
 
-- [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/seq_master.fasta" alt="seq_master.fasta" width="400" height="350">
+- [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/seq_master.fasta" alt="seq_master.fasta" width="350" height="350">
 
   What is it?
 
