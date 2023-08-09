@@ -90,11 +90,37 @@ Open up a command line prompt (terminal) and execute the following command:
 
 ```sh
 # Run the Python script titled RUN_GINSA.py
-python3 path_to_your_RUN_GINSA.py
+python3 path_to_your_file/RUN_GINSA.py
 ```
 
-If everything went well, you should be greeted with a command line input prompt.
+If everything went well, you should be greeted with the welcome message:
 
+```sh
+Welcome to the GbIf Next-gen Sequence Analyzer! (GINSA)
+```
+
+Followed by a prompt asking for your project directory path:
+
+```sh
+Enter the path to an empty folder for this project:/home/researcher/Desktop/lecudina_longissima
+```
+
+Next, GINSA will ask for the species you wish to search. 
+Here, you can search either the full genus+species name, as in "Lecudina longissima", or just a genus, as in "Labyrinthula".
+
+```sh
+Enter your target genus and species (i.e. Lecudina longissima):Lecudina longissima
+```
+
+GINSA will respond with some confirmation details:
+
+```sh
+Genus:  Lecudina
+Species:  longissima
+Number of occurrences found: 26
+```
+
+GINSA will then proceed with the analysis, informing you of each step being performed in real time.
 ### Enter your project directory and species of interest
 
 Text here....
