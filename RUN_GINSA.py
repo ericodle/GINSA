@@ -530,7 +530,7 @@ def main():
     else:
         print("No occurrences found for this taxon.")
 
-    if num_occurrences > 1000:
+    if num_occurrences > 300:
         print("There seem to be many ocurrences of this taxon in GBIF. Please ensure that you have sufficient storage.")
 
     create_folders(occurrence_ids, proj_dir)
