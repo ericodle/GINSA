@@ -3,6 +3,7 @@
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
     <img src="https://github.com/" alt="Logo" width="400" height="350">
+    There is going to be a cool logo here as soon as P and Kyoko make it.
   </a>
 
 <h3 align="center">GINSA: <ins>G</ins>b<ins>I</ins>f <ins>N</ins>ext-gen <ins>S</ins>equence <ins>A</ins>nalyzer</h3>
@@ -42,13 +43,7 @@
 
 <img src="https://github.com/" alt="workflow" width="400" height="350">
 
-First,
-
-Second,
-
-Third
-
-Fourth....
+There is going to be a cool graphic here as soon as P and Kyoko make it.
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
@@ -135,7 +130,7 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] sifting_results.png
 
-  What is it?
+  This image plots a simple histogram showing how many occurrence sub-folders actually contain FASTA and MAPSeq files. Some occurrences in GBIF darw from data types other than next-gen sequences, such as human observation or Sanger sequencing. In the future, we may expand the scope of GINSA to grab Sanger SSU sequences from other online databases as such as the European Nucleotide Archive (ENA), the National Center for Biotechnology Information (NCBI), the DNA Data Bank of Japan (DDBJ), and SILVA (Latin for 'forest').
 
   <img src="https://github.com/ericodle/GINSA/blob/main/example_images/sifting_results.png" alt="seq_master.fasta" width="350" height="350">
 
