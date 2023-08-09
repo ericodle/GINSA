@@ -172,9 +172,13 @@ Distributed under the GNU Lesser General Public License. See `LICENSE.txt` for m
 Citing
 ------
 
-Please cite the following paper if you use the code provided in this repository.
 
-Conference citation coming soon!
+EO: lead developer
+SR: testing, presentation
+KK: testing, image drafting
+KW: theory oversight
+
+Manuscript citation coming soon!
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
