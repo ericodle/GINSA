@@ -162,43 +162,35 @@ Below is a description of each output file, using the search term "Lecudina long
 
 
 
+## Key Functions
 
+- [ ] search_species_occurrences
 
+describe
 
+- [ ] ssu_fasta_grab
 
-## Functions
+describe
 
-- [ ] train_model.py
+- [ ] mapseq_grab
 
-This script can be called to train a pre-defined neural network class on labeled MFCC data. Upon training completion, the user will be provided a graph of both training and validation following each train epoch. This graph can be useful in diagnosing neural network issues such as overfitting.
+describe
 
-- [ ] test_model.py
+- [ ] find_target_in_mapseq
 
-This script can be called to test a trained neural network on labeled MFCC data. Once executed, a confusion matrix image will be generated to show the user how well the neural network was able to classify each musical genre.
+describe
 
-- [ ] models.py
+- [ ] sift_fasta
 
-This bit of code defines the artifical neural network architectures used in our study. Classes for MLP, CNN, LSTM, BiLSTM, and GRU models are written for PyTorch, which we chose over Keras for its greater granular control. Users are welcome to use these model classes to conduct their own experimentation.
+describe
 
-- [ ] MFCC_extraction.py
+- [ ] analyze_subdir_fasta
 
-This script extracts MFCCs from the GTZAN dataset music files and saves them in JSON format. The resulting file is about 640 MB in size, and contains an ordered list of 13 MFCC values per segment of each song within the dataset. Moreover, this data is labeled with values 0 through 9 corresponding to one of the ten genres present.
+describe
 
-- [ ] MFCC_primer.ipynb
+- [ ] combine_csv_files
 
-This Jupyter Notebook with direct link to a ready-to-use Google Colab environment is intended to answer the questions "What is an MFCC?" and "How did we get our MFCCs?"
-
-- [ ] live_runs
-
-This folder contains a collection of Jupyter Notebooks (linked to Google Colab) that were saved and uploaded to GitHub immediately after running. In their currently saved state, they serve as a record of the experimental runs on which we base our results. Of course, users are welcome to play around with these scripts and try to beat our top test accuracy of 90.7%!
-
-- [ ] GRU_CM
-
-We herein provide a representative graphic for this README file and, by extension, project. This CM (confusion matrix) obtained upon testing our GRU model serves the additional function of showing our best achieved performance.
-
-- blues.00000.wav
-
-This .wav file is provided as a test music clip. The file itself was taken from the same download of the GTZAN dataset as used throughout this project, and the excerpt is from the classic John Lee Hooker song "One Bourbon, One Scotch, One Beer." It is classified in GTZAN as Blues.
+describe
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
