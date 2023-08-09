@@ -225,10 +225,10 @@ Citing
 ------
 
 
-EO: lead developer
-SR: testing, presentation
-KK: testing, image drafting
-KW: theory oversight
+EO: lead developer<br /> <br />
+SR: testing, presentation<br /> <br />
+KK: testing, image drafting<br /> <br />
+KW: theory oversight<br /> <br />
 
 Manuscript citation coming soon!
 
