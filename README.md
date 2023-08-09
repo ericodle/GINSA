@@ -63,8 +63,6 @@ This file can be downloaded directly, or you can clone the repository by copy-pa
   git clone git@github.com:ericodle/GINSA.git
   ```
 
-> __For this example, the working directory is the repository root directory.__ 
-
 For your convenience, a Jupyter Notebook is also provided via the Google Colab service.
 This option is nice if you want to see the code as the program runs. It also allows you to run the program using Google's computers rather than your own (the software runs in an internet browser).
 To use the Jupyter Notebook version of GINSA, simply click the link:** and then click the "Open in Colab" button. *insert image*
@@ -94,9 +92,10 @@ Open up a command line prompt (terminal) and execute the following command:
 # Run the Python script titled RUN_GINSA.py
 python3 path_to_your_RUN_GINSA.py
 ```
+
 If everything went well, you should be greeted with a command line input prompt.
 
-### Enter your project directory and species of interest.
+### Enter your project directory and species of interest
 
 Text here....
 
@@ -104,24 +103,10 @@ Text here....
    # ???
    ????
    ```
-Note #1: Training requires a GPU to complete in a timely manner. You can either use your own hardware, or work on a Colab environment.
-If you use a GPU, make sure you have cuda and all related dependencies set up in your environment.
+?????
 
-Note #2: Training is as much an art as it is a science, and often involves playing around with different hyperparameters. Users are encouraged to go into the train_model.py script and change the optimizer, learning rate, epochs, or other parameters. The default settings represent what worked best for us at the time of experimentation.
 
-### Testing a trained model
-
-You now have a model trained from scratch on MFCCs extracted from the GTZAN music genre dataset. Nice! It is time to see how well it can classify musical genre.
-In our conference paper, we used a shuffled 80:10:10 split for training, train phase validation, and testing. Therefore, the music clip segments reserved for testing come from same dataset, but have never been seen by the trained model before. Given the scope of the GTZAN dataset, your trained model is unlikely to distinguish Bunun polyphonic chant music from Ainu rimse dance music. A neural network is only as good as the data on which it is trained. Within the GTZAN training data, how well can your model classify musical genre?
-
-  ```sh
-  # Test a pre-trained model.
-  ./test_model.py
-  ```
-
-Note: The entire MFCC extract JSON file is re-shuffled and split into 80:10:10 train/validation/test subsets each time the train_model.py and test_model.py  scripts are run. Therefore, each train and test run may yield slightly different results. In our experience working on this project, the only factors signifcantly affecting performance were neural network architecture and training hyperparameters.
-
-## Repository Files
+## Functions
 
 - [ ] train_model.py
 
