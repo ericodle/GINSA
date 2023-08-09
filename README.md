@@ -54,7 +54,15 @@ Fourth....
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-## Getting Started
+## Quick Start: GINSA Jupyter Notebook
+
+For your convenience, a Jupyter Notebook is also provided via the Google Colab service.
+This option is nice if you want to see the code as the program runs. It also allows you to run the program using Google's computers rather than your own (the software runs in an internet browser).
+To use the Jupyter Notebook version of GINSA, simply click [RUN_GINSA.ipynb](https://github.com/ericodle/GINSA/blob/main/RUN_GINSA.ipynb) and then click the "Open in Colab" button at the top left.
+You can watch our instructional video for a guided walkthrough of how to use the Jupyter Notebook.
+
+## Execute using RUN_GINSA.py
+
 
 In the spirit of simplicity, GINSA can be run with a single file named RUN_GINSA.py.
 This file can be downloaded directly, or you can clone the repository by copy-pasting these commands into your command prompt (terminal).
@@ -64,11 +72,6 @@ This file can be downloaded directly, or you can clone the repository by copy-pa
   cd /your_folderpath_here
   git clone git@github.com:ericodle/GINSA.git
   ```
-
-For your convenience, a Jupyter Notebook is also provided via the Google Colab service.
-This option is nice if you want to see the code as the program runs. It also allows you to run the program using Google's computers rather than your own (the software runs in an internet browser).
-To use the Jupyter Notebook version of GINSA, simply click [RUN_GINSA.ipynb](https://github.com/ericodle/GINSA/blob/main/RUN_GINSA.ipynb) and then click the "Open in Colab" button at the top left.
-You can watch our instructional video for a guided walkthrough of how to use the Jupyter Notebook.
 
 ### Install dependencies using pip
 Whether you downloaded RUN_GINSA.py or cloned the repository, you will need Python installed on your computer. GINSA was tested on Python3.
@@ -81,9 +84,7 @@ Once Python is installed, you will need to copy-paste these commands into your c
   pip install biopython
   ```
 
-### Execute RUN_GINSA.py
-
-Create an empty folder (directory) and take note of its full folder path (should look something like "/home/researcher/Desktop/GINSA_run"). All the project files will be saved there.
+Next, create an empty folder (directory) and take note of its full folder path (should look something like "/home/researcher/Desktop/GINSA_run"). All the project files will be saved there.
 Ensure you have at least 50 GB of available storage. The actual about of required space will depend on the number of occurrences available for the species you search.
 Ensure your internet connection is stable. You will be downloading a lot of large FASTA files. For instance, Lecudina tuzetae had 309 occurrences in GBIF, and RUN_GINSA took about 1 hour to complete.
 Ensure you know the full filepath of your RUN_GINSA.py file. We find it easiest to just leave it on the desktop.
