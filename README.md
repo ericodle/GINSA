@@ -9,7 +9,7 @@
 
   <p align="left">
   GINSA is a tool to help biodiversity researchers extract data via GBIF.<br />
-  The impetus for this project arose from our own experiences struggling to gather linked location and sequence data.<br />
+  As marine protist researchers, the impetus for this project arose from our own data collection challenges.<br />
   Users simply type their species of interest, then GINSA gathers metadata on each GBIF occurrence.<br />
   Gathered data includes the GBIF occurrence ID, latitude/longitude, and country of origin, all saved as a spreadsheet.<br />
   GINSA then downloads SSU rDNA sequences for each occurrence, combining them into a single FASTA file.<br />
