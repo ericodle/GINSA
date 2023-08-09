@@ -11,6 +11,7 @@
   GINSA is a tool to help biodiversity researchers extract beiogeographic and taxonomic data via GBIF and associated databases.
     Users simply type their species of interest, then GINSA gathers metadata on each GBIF occurrence of that species.
     Collected metadata includes the GBIF occurrence ID, latitude/longitude, country of collection, and a link to <ins>occurence-specific next-generation sequence repositories</ins>.
+    Finally, GINSA downloads the associated 18S SSU rDNA sequences for each occurrence, then combines these sequences into a single FASTA file for downstream analysis.
     <br />
     <br />
     <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
