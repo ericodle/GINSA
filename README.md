@@ -145,20 +145,22 @@ Below is a description of each output file, using the search term "Lecudina long
 
   What is it?
 
-  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/nucleotide_frequencies.png" alt="seq_master.fasta" width="200" height="100">
+  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/nucleotide_frequencies.png" alt="seq_master.fasta" width="300" height="150">
 
 
 
 - [ ] sequence_lengths.png
-  <img src="https://github.com/" alt="sequence_lengths.png" width="400" height="350">
 
   What is it?
+
+  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/sequence_lengths.png" alt="seq_master.fasta" width="300" height="150">
 
 
 - [ ] sifting_results.png
-  <img src="https://github.com/" alt="sifting_results.png" width="400" height="350">
 
   What is it?
+
+  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/sifting_results.png" alt="seq_master.fasta" width="300" height="150">
 
 
 
