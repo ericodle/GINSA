@@ -60,7 +60,7 @@ This file can be downloaded directly, or you can clone the repository by copy-pa
   ```sh
   # Replace "your_folderpath_here" with the actual folder where you want the project to go.
   cd /your_folderpath_here
-  git clone git@github.com:ericodle/GRU_Classifying_GTZAN.git
+  git clone git@github.com:ericodle/GINSA.git
   ```
 
 > __For this example, the working directory is the repository root directory.__ 
@@ -71,7 +71,7 @@ To use the Jupyter Notebook version of GINSA, simply click the link:** and then 
 You can watch our instructional video for a guided walkthrough of how to use the Jupyter Notebook.
 
 ### Install dependencies using pip
-Whether you downloaded RUN_GINSA.py or cloned the repository, you will need Python installed on your computer.
+Whether you downloaded RUN_GINSA.py or cloned the repository, you will need Python installed on your computer. GINSA was tested on Python3.
 Once Python is installed, you will need to copy-paste these commands into your command prompt (terminal).
 GINSA uses 
 
@@ -82,29 +82,27 @@ GINSA uses
   pip install biopython
   ```
 
-### Download GTZAN and extract MFCCs
+### Execute RUN_GINSA.py
 
-> The training/testing music used in this project comes from the GTZAN music genre dataset, which can be downloaded [here](https://www.kaggle.com/datasets/andradaolteanu/gtzan-dataset-music-genre-classification/download) from Kaggle. 
-> You will need to enter some account login details per Kaggle's requirements before the download can begin. 
-> Then, you must manually relocate the full dataset (parent folder containing 10 genre sub-folders, each with 100 music clips) into the "GTZAN_dataset" project folder.
-
+> Create an empty folder (directory) and take note of its full folder path (should look something like "/home/researcher/Desktop/GINSA_run"). All the project files will be saved there.
+> Ensure you have at least 50 GB of available storage. The actual about of required space will depend on the number of occurrences available for the species you search.
+> Ensure your internet connection is stable. You will be downloading a lot of large FASTA files. For instance, Lecudina tuzetae had 309 occurrences in GBIF, and RUN_GINSA took about 1 hour to complete.
+> Ensure you know the full filepath of your RUN_GINSA.py file. We find it easiest to just leave it on the desktop.
+> Open up a command line prompt (terminal) and execute the following command:
+> 
 ```sh
-# This script will extract MFCC's from each song clip.
-./MFCC_extraction.py
+# Run the Python script titled RUN_GINSA.py
+python3 path_to_your_RUN_GINSA.py
 ```
-> Note that the resulting JSON file is saved in the "MFCCs" folder as a JSON file about 640 MB in size.
+> If everything went well, you should be greeted with a command line input prompt.
 
+### Enter your project directory and species of interest.
 
-### Train a model from scratch
-
-Run the following script to set up a new experiment with default settings.
-You will need to specify the type of neural network you want to use.
-After the training process is complete, a train/validation curve will be saved in the project root directory.
-The final model state will also be saved for the next phase: testing. 
+Text here....
 
    ```sh
-   # Set up a new training run
-   ./train_model.py
+   # ???
+   ????
    ```
 Note #1: Training requires a GPU to complete in a timely manner. You can either use your own hardware, or work on a Colab environment.
 If you use a GPU, make sure you have cuda and all related dependencies set up in your environment.
