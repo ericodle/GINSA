@@ -8,7 +8,7 @@
 <h3 align="center">GINSA: <ins>G</ins>b<ins>I</ins>f <ins>N</ins>ext-gen <ins>S</ins>equence <ins>A</ins>nalyzer</h3>
 
   <p align="center">
-  GINSA is a tool to help biodiversity researchers extract data via GBIF.<br /> <br />
+    GINSA is a tool to help biodiversity researchers extract data via GBIF.<br /> <br />
     
   As marine protistologists, the impetus for this project arose from obstacles faced during our own research.
   Thus, we created a Python program that exploits GBIF's wealth of biogeography data and sequence links.
