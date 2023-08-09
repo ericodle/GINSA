@@ -27,7 +27,7 @@
   We hope the revelation of these issues lead to community-driven solutions and, ultimately, a more robust and reliable GBIF.<br /><br />
 
   GINSA is the first tool of its kind to our knowledge, and is anticipated to save researchers countless hours in manual data collection.
-  In the spirit of GBIF, the code for GINSA is openly available, and we encourage collaboration in making it better
+  In the spirit of GBIF, the code for GINSA is openly available, and we encourage collaboration in making it better. There are links below to report a bug or request a new feature.
   Moreover, we invite everyone interested to follow along with the instructions provided below.
   
   <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
