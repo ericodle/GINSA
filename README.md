@@ -7,19 +7,26 @@
 
 <h3 align="center">GINSA: <ins>G</ins>b<ins>I</ins>f <ins>N</ins>ext-gen <ins>S</ins>equence <ins>A</ins>nalyzer</h3>
 
-  <p align="left">
+  <p align="center">
   GINSA is a tool to help biodiversity researchers extract data via GBIF.<br /> <br />
     
-  As marine protistologists, the impetus for this project arose from obstacles faced during our own research.<br />
-  Thus, we created a Python program that exploits GBIF's wealth of biogeography data and sequence links.<br />
-  Users simply type their species of interest, then GINSA gathers metadata on each GBIF occurrence.<br />
-  Gathered data includes the GBIF occurrence ID, latitude/longitude, and country of origin -- all saved to a simple spreadsheet.<br />
-  GINSA then downloads SSU rDNA sequences for each occurrence, combining them into a single FASTA file.<br />
+  As marine protistologists, the impetus for this project arose from obstacles faced during our own research.
+  Thus, we created a Python program that exploits GBIF's wealth of biogeography data and sequence links.
+  Users simply type their species of interest, then GINSA gathers metadata on each GBIF occurrence.
+  Gathered data includes the GBIF occurrence ID, latitude/longitude, and country of origin -- all saved to a simple spreadsheet.
+  GINSA then downloads SSU rDNA sequences for each occurrence, combining them into a single FASTA file.<br /><br />
 
-  GINSA has been tested on multiple protist taxa at both the species and genus level.<br />
-  Those taxa include Lecudina longissima (26 occurrences), Lecudina tuzetae (309 occurrences), Labyrinthula (2,603 occurrences), and Symbiodinium (10,426 occurrences)
+  GINSA has been tested on multiple protist taxa at both the species and genus level.
+  Those taxa include Lecudina longissima (26 occurrences), Lecudina tuzetae (309 occurrences), Labyrinthula (2,603 occurrences), and Symbiodinium (10,426 occurrences).
+  During the development and testing phases, we discovered issues with the available data that deserve community attentions.
+  Specifically, we noticed two challenges: 1) A lack of SSU amplification site uniformity, and 2) unbalanced biogeographic representation.<br /><br />
   
-  We hope this tool serves to empower the biodiversity community! 
+  The first challenge refers to the relative size of the 18S SSU gene (approx. 1,800 bp) compared to the next-gen SSU sequence lengths (100-300 bp) recovered using GINSA.
+  Simply, sequences from different sites/teams/countries amplified different regions of the SSU gene. This is a problem when attempting to construct a phylogenetic tree, since the sequences are not comparable.
+  The second challenge refers to sampling bias present in the datasets. Taking Lecudina tuzetae as an example, the majority of sequences were obtained from Germany. Only a handful of sequences were from other countries such as Australia, Great Brittain, the United States, and Taiwan. 
+  We hope the revelation of these issues lead to community-driven solutions and, ultimately, a more robust and reliable GBIF.<br /><br />
+
+  
     <br />
     <br />
     <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
