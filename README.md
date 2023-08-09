@@ -8,7 +8,9 @@
 <h3 align="center">GINSA: <ins>G</ins>b<ins>I</ins>f <ins>N</ins>ext-gen <ins>S</ins>equence <ins>A</ins>nalyzer</h3>
 
   <p align="center">
-  In this project, we explore various artifical neural network (ANN) approaches to achieve near-human accuracy in a music genre classification task. By converting raw .wav audio input into an array of MFCC values, we are able to achieve our best result (90.7% accuracy) using a Gated Recurrent Unit (GRU) model written in PyTorch. This repository serves as a source of supplementary material for a music genre classification conference paper currently under review. We herein archive our Python scripts and provide a sample Google Colab notebook for the reference of anyone interested.
+  GINSA is a tool to help biodiversity researchers extract beiogeographic and taxonomic data via GBIF and associated databases.
+    Users simply type their species of interest, then GINSA gathers metadata on each GBIF occurrence of that species.
+    Collected metadata includes the GBIF occurrence ID, latitude/longitude, country of collection, and a link to <ins>occurence-specific next-generation sequence repositories</ins>.
     <br />
     <br />
     <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
