@@ -8,9 +8,9 @@
 <h3 align="center">GINSA: <ins>G</ins>b<ins>I</ins>f <ins>N</ins>ext-gen <ins>S</ins>equence <ins>A</ins>nalyzer</h3>
 
   <p align="left">
-  GINSA is a tool to help biodiversity researchers extract beiogeographic and taxonomic data via GBIF and associated databases.<br />
-    Users simply type their species of interest, then GINSA gathers metadata on each GBIF occurrence for your target species.<br />
-    Collected metadata includes the GBIF occurrence ID, latitude/longitude, country of collection, and a link to <ins>occurence-specific next-generation sequence repositories</ins>.<br />
+  GINSA is a tool to help biodiversity researchers extract data via GBIF.<br />
+  Users simply type their species of interest, then GINSA gathers metadata on each GBIF occurrence.<br />
+  Gathered data includes the GBIF occurrence ID, latitude/longitude, and a link to <ins>next-generation sequence repositories</ins>.<br />
     Finally, GINSA downloads the associated 18S SSU rDNA sequences for each occurrence, then combines these sequences into a single FASTA file for downstream analysis.<br />
     <br />
     <br />
