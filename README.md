@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="https://github.com/ericodle/Genre-Classification-Using-LSTM/blob/main/GRU_CM.jpg" alt="Logo" width="400" height="350">
+    <img src="https://github.com/" alt="Logo" width="400" height="350">
   </a>
 
 <h3 align="center">GINSA: GbIf Next-Gen Sequence Analyzer</h3>
