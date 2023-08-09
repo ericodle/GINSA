@@ -125,28 +125,28 @@ Note: Analysis time depends on internet connection speed and the number of occur
 
 ## Completion of Analysis
 
-When GINSA completes its process, you will find that your project folder now contains a unique sub-folder for each occurrence found, as well as some other files. <br \>
+When GINSA completes its process, you will find that your project folder now contains a unique sub-folder for each occurrence found, as well as several output files. <br />
 
-Those other files include:
+Below is a description of each output file, using the search term "Lecudina longissima" as an example.
 
 - [ ] occurrences.csv
-
+<img src="https://github.com/" alt="Logo" width="400" height="350">
   What is it?
 
 - [ ] seq_master.fasta
-
+<img src="https://github.com/" alt="Logo" width="400" height="350">
 What is it?
 
 - [ ] nucleotide_frequencies.png
-
+<img src="https://github.com/" alt="Logo" width="400" height="350">
 What is it?
 
 - [ ] sequence_lengths.png
-
+<img src="https://github.com/" alt="Logo" width="400" height="350">
 What is it?
 
 - [ ] sifting_results.png
-
+<img src="https://github.com/" alt="Logo" width="400" height="350">
 What is it?
 
 
