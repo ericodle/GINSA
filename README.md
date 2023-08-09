@@ -142,9 +142,11 @@ Below is a description of each output file, using the search term "Lecudina long
 
 
 - [ ] nucleotide_frequencies.png
-  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/nucleotide_frequencies.png" alt="seq_master.fasta" width="400" height="350">
 
   What is it?
+
+  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/nucleotide_frequencies.png" alt="seq_master.fasta" width="200" height="100">
+
 
 
 - [ ] sequence_lengths.png
