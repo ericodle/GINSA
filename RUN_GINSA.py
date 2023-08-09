@@ -496,7 +496,7 @@ def main():
 
     print("Welcome to the GbIf Next-gen Sequence Analyzer! (GINSA)")
 
-    proj_dir = input("Enter the path to an empty folder for this project.")
+    proj_dir = input("Enter the path to an empty folder for this project:  ")
 
     species_name = input("Enter your target taxon in genus-species format (i.e. Lecudina longissima). You can also enter Genus alone: ")
 
