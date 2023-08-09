@@ -8,7 +8,7 @@
 <h3 align="center">GINSA: <ins>G</ins>b<ins>I</ins>f <ins>N</ins>ext-gen <ins>S</ins>equence <ins>A</ins>nalyzer</h3>
 
   <p align="center">
-    GINSA is a tool to help biodiversity researchers extract data via GBIF.<br /> <br />
+    GINSA is a tool to help biodiversity researchers extract sequence and location data via GBIF.<br /> <br />
     
   As marine protistologists, the impetus for this project arose from obstacles faced during our own research.
   Thus, we created a Python program that exploits GBIF's wealth of biogeography data and sequence links.
@@ -26,12 +26,13 @@
   The second challenge refers to sampling bias present in the datasets. Taking Lecudina tuzetae as an example, the majority of sequences were obtained from Germany. Only a handful of sequences were from other countries such as Australia, Great Brittain, the United States, and Taiwan. 
   We hope the revelation of these issues lead to community-driven solutions and, ultimately, a more robust and reliable GBIF.<br /><br />
 
+  GINSA is the first tool of its kind to our knowledge, and is anticipated to save researchers countless hours in manual data collection.
+  In the spirit of GBIF, the code for GINSA is openly available, and we encourage collaboration in making it better
+  Moreover, we invite everyone interested to follow along with the instructions provided below.
   
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+  <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+  
+  <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
   </p>
 </div>
 
