@@ -40,6 +40,8 @@
 <!-- ABOUT THE PROJECT -->
 ## GINSA Workflow
 
+<img src="https://github.com/" alt="workflow" width="400" height="350">
+
 First,
 
 Second,
@@ -130,7 +132,7 @@ When GINSA completes its process, you will find that your project folder now con
 Below is a description of each output file, using the search term "Lecudina longissima" as an example.
 
 - [ ] occurrences.csv
-  <img src="https://github.com/" alt="Logo" width="400" height="350">
+  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/occurrences.csv" alt="occurrences.csv" width="400" height="350">
 
   What is it?
 
@@ -142,19 +144,19 @@ Below is a description of each output file, using the search term "Lecudina long
 
 
 - [ ] nucleotide_frequencies.png
-  <img src="https://github.com/" alt="Logo" width="400" height="350">
+  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/nucleotide_frequencies.png" alt="seq_master.fasta" width="400" height="350">
 
   What is it?
 
 
 - [ ] sequence_lengths.png
-  <img src="https://github.com/" alt="Logo" width="400" height="350">
+  <img src="https://github.com/" alt="sequence_lengths.png" width="400" height="350">
 
   What is it?
 
 
 - [ ] sifting_results.png
-  <img src="https://github.com/" alt="Logo" width="400" height="350">
+  <img src="https://github.com/" alt="sifting_results.png" width="400" height="350">
 
   What is it?
 
