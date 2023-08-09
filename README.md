@@ -8,12 +8,17 @@
 <h3 align="center">GINSA: <ins>G</ins>b<ins>I</ins>f <ins>N</ins>ext-gen <ins>S</ins>equence <ins>A</ins>nalyzer</h3>
 
   <p align="left">
-  GINSA is a tool to help biodiversity researchers extract data via GBIF.<br />
+  GINSA is a tool to help biodiversity researchers extract data via GBIF.<br /> <br />
+    
   As marine protistologists, the impetus for this project arose from obstacles faced during our own research.<br />
   Thus, we created a Python program that exploits GBIF's wealth of biogeography data and sequence links.<br />
   Users simply type their species of interest, then GINSA gathers metadata on each GBIF occurrence.<br />
   Gathered data includes the GBIF occurrence ID, latitude/longitude, and country of origin -- all saved to a simple spreadsheet.<br />
   GINSA then downloads SSU rDNA sequences for each occurrence, combining them into a single FASTA file.<br />
+
+  GINSA has been tested on multiple protist taxa at both the species and genus level.<br />
+  Those taxa include Lecudina longissima (26 occurrences), Lecudina tuzetae (309 occurrences), Labyrinthula (2,603 occurrences), and Symbiodinium (10,426 occurrences)
+  
   We hope this tool serves to empower the biodiversity community! 
     <br />
     <br />
