@@ -84,17 +84,17 @@ GINSA uses
 
 ### Execute RUN_GINSA.py
 
-> Create an empty folder (directory) and take note of its full folder path (should look something like "/home/researcher/Desktop/GINSA_run"). All the project files will be saved there.
-> Ensure you have at least 50 GB of available storage. The actual about of required space will depend on the number of occurrences available for the species you search.
-> Ensure your internet connection is stable. You will be downloading a lot of large FASTA files. For instance, Lecudina tuzetae had 309 occurrences in GBIF, and RUN_GINSA took about 1 hour to complete.
-> Ensure you know the full filepath of your RUN_GINSA.py file. We find it easiest to just leave it on the desktop.
-> Open up a command line prompt (terminal) and execute the following command:
-> 
+Create an empty folder (directory) and take note of its full folder path (should look something like "/home/researcher/Desktop/GINSA_run"). All the project files will be saved there.
+Ensure you have at least 50 GB of available storage. The actual about of required space will depend on the number of occurrences available for the species you search.
+Ensure your internet connection is stable. You will be downloading a lot of large FASTA files. For instance, Lecudina tuzetae had 309 occurrences in GBIF, and RUN_GINSA took about 1 hour to complete.
+Ensure you know the full filepath of your RUN_GINSA.py file. We find it easiest to just leave it on the desktop.
+Open up a command line prompt (terminal) and execute the following command:
+
 ```sh
 # Run the Python script titled RUN_GINSA.py
 python3 path_to_your_RUN_GINSA.py
 ```
-> If everything went well, you should be greeted with a command line input prompt.
+If everything went well, you should be greeted with a command line input prompt.
 
 ### Enter your project directory and species of interest.
 
