@@ -131,14 +131,12 @@ When GINSA completes its process, you will find that your project folder now con
 
 Below is a description of each output file, using the search term "Lecudina longissima" as an example.
 
-- [ ] occurrences.csv
-  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/occurrences.csv" alt="occurrences.csv" width="400" height="350">
+- [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/occurrences.csv" alt="occurrences.csv" width="400" height="350">
 
   What is it?
 
 
-- [ ] seq_master.fasta
-  <img src="https://github.com/" alt="Logo" width="400" height="350">
+- [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/seq_master.fasta" alt="seq_master.fasta" width="400" height="350">
 
   What is it?
 
