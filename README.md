@@ -228,7 +228,7 @@ Citing
 EO [github.com/ericodle](https://github.com/ericodle/) : lead developer<br /> <br />
 SR: testing, presentation<br /> <br />
 KK: testing, image drafting<br /> <br />
-KW [Lab](https://wakemanlaboratory.com/about/): theory oversight<br /> <br />
+KW [Lab Site](https://wakemanlaboratory.com/about/) : theory oversight<br /> <br />
 
 Manuscript citation coming soon!
 
