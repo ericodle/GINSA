@@ -131,33 +131,34 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] occurrences.csv
 <img src="https://github.com/" alt="Logo" width="400" height="350">
+
   What is it?
 
- <br />
 
 - [ ] seq_master.fasta
 <img src="https://github.com/" alt="Logo" width="400" height="350">
-What is it?
 
- <br />
+  What is it?
+
 
 - [ ] nucleotide_frequencies.png
 <img src="https://github.com/" alt="Logo" width="400" height="350">
-What is it?
 
- <br />
+  What is it?
+
 
 - [ ] sequence_lengths.png
 <img src="https://github.com/" alt="Logo" width="400" height="350">
-What is it?
 
- <br />
+  What is it?
+
 
 - [ ] sifting_results.png
 <img src="https://github.com/" alt="Logo" width="400" height="350">
-What is it?
 
- <br />
+  What is it?
+
+
 
 
 ## Functions
