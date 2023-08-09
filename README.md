@@ -225,7 +225,7 @@ Citing
 ------
 
 
-EO: lead developer<br /> <br />
+EO: github.com/ericodle  lead developer<br /> <br />
 SR: testing, presentation<br /> <br />
 KK: testing, image drafting<br /> <br />
 KW: theory oversight<br /> <br />
