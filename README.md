@@ -38,13 +38,15 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About this Project
+## GINSA Workflow
 
-This was my first project with Professor Rebecca Lin (Feng Chia University, Taiwan) during the Taiwan Experience Exchange Program. Classifying music genre was my initial experience both in writing/training ANNs from scratch as well as in audio signal analysis, and I had a lot of catching up to do. Through a wealth of online resources, particularly the MFCC tutorials provided by [Valerio Velardo](https://github.com/musikalkemist), we were able to train models with decent generaliation and test classification accuracy. 
+First,
 
-Our results are based on the [GTZAN](http://marsyas.info/index.html) music genre dataset, which provides 10 human-classified genre folders: blues, classical, country, disco, hip-hop, jazz, metal, pop, reggae, and rock. Each genre folder contains 100 30-second audio clips of genre-specific songs in .wav format. Following previous work in this field, we extracted [Mel-frequency cepstral coefficients](https://en.wikipedia.org/wiki/Mel-frequency_cepstrum), or MFCCs, from each audio clip, divided the entire shuffled set into an 80:10:10 train/validation/test split, and played around with multi-layer perceptron, convolutional, and recurrent networks/hyperparamteters until we got a model that achieved at least 90% accuracy.
+Second,
 
-We hope this project inspires you to contribute to our project, incorporate our tools, and play around with ANN models yourself! 
+Third
+
+Fourth....
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
