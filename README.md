@@ -54,9 +54,8 @@ Fourth....
 
 ## Getting Started
 
-Download this repository by going up to the green "Code" button at the top right and clicking "Download ZIP".
-
-Alternatively, you can also clone the repo directly using the following command.
+In the spirit of simplicity, GINSA can be run with a single file named RUN_GINSA.py.
+This file can be downloaded directly, or you can clone the repository by copy-pasting these commands into your command prompt (terminal).
 
   ```sh
   # Replace "your_folderpath_here" with the actual folder where you want the project to go.
@@ -66,13 +65,21 @@ Alternatively, you can also clone the repo directly using the following command.
 
 > __For this example, the working directory is the repository root directory.__ 
 
+For your convenience, a Jupyter Notebook is also provided via the Google Colab service.
+This option is nice if you want to see the code as the program runs. It also allows you to run the program using Google's computers rather than your own (the software runs in an internet browser).
+To use the Jupyter Notebook version of GINSA, simply click the link:** and then click the "Open in Colab" button. *insert image*
+You can watch our instructional video for a guided walkthrough of how to use the Jupyter Notebook.
+
 ### Install dependencies using pip
+Whether you downloaded RUN_GINSA.py or cloned the repository, you will need Python installed on your computer.
+Once Python is installed, you will need to copy-paste these commands into your command prompt (terminal).
+GINSA uses 
 
   ```sh
-  # Install dependencies if necessary. 
-  # You may want to work in a virtual environment. Conda environments are nice for that.
-  pip install librosa
-  pip install torch torchvision
+  # Install required packages for GINSA using pip.
+  pip install requests
+  pip install wget
+  pip install biopython
   ```
 
 ### Download GTZAN and extract MFCCs
