@@ -73,7 +73,6 @@ You can watch our instructional video for a guided walkthrough of how to use the
 ### Install dependencies using pip
 Whether you downloaded RUN_GINSA.py or cloned the repository, you will need Python installed on your computer. GINSA was tested on Python3.
 Once Python is installed, you will need to copy-paste these commands into your command prompt (terminal).
-GINSA uses 
 
   ```sh
   # Install required packages for GINSA using pip.
