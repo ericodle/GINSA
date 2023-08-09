@@ -131,6 +131,26 @@ When GINSA completes its process, you will find that your project folder now con
 
 Below is a description of each output file, using the search term "Lecudina longissima" as an example.
 
+- [ ] sifting_results.png
+
+  What is it?
+
+  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/sifting_results.png" alt="seq_master.fasta" width="300" height="200">
+
+- [ ] sequence_lengths.png
+
+  What is it?
+
+  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/sequence_lengths.png" alt="seq_master.fasta" width="300" height="200">
+
+
+- [ ] nucleotide_frequencies.png
+
+  What is it?
+
+  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/nucleotide_frequencies.png" alt="seq_master.fasta" width="300" height="200">
+  
+
 - [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/occurrences.csv" alt="occurrences.csv" width="400" height="350">
 
   What is it?
@@ -141,26 +161,7 @@ Below is a description of each output file, using the search term "Lecudina long
   What is it?
 
 
-- [ ] nucleotide_frequencies.png
 
-  What is it?
-
-  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/nucleotide_frequencies.png" alt="seq_master.fasta" width="300" height="200">
-
-
-
-- [ ] sequence_lengths.png
-
-  What is it?
-
-  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/sequence_lengths.png" alt="seq_master.fasta" width="300" height="200">
-
-
-- [ ] sifting_results.png
-
-  What is it?
-
-  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/sifting_results.png" alt="seq_master.fasta" width="300" height="200">
 
 
 
