@@ -220,7 +220,7 @@ Citing
 
 EO [github.com/ericodle](https://github.com/ericodle/) : lead developer<br /> <br />
 
-SR [github.com/sirateer](https://github.com/sirateer) : testing, presentation<br /r> <br />
+SR [github.com/sirateer](https://github.com/sirateer) : debugging, workflow design<br /> <br />
 
 KK: testing, logo design<br /> <br />
 
