@@ -224,7 +224,7 @@ def mapseq_grab(csv_file, proj_dir):
                 file_name = os.path.basename(mapseq_link)
                 file_path = os.path.join(subdir_path, file_name)
                 wget.download(mapseq_link, file_path)
-            print("Download complete.")
+            print(" Download complete.")
         else:
             print(f"No MAPSeq files found for {occurrence_id}. Saving 'no_mapseq.txt'...")
             no_mapseq_file = os.path.join(subdir_path, "no_mapseq.txt")
