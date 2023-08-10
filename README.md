@@ -143,7 +143,7 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] nucleotide_frequencies.png
 
-  This image plots the proportion of each nucleotide, A, T, C, and G, as a percentage histogram. Nucelotide proportions serve as an additional quality check on the extracted sequences.
+  This image plots the proportion of each nucleotide, A, T, C, and G, as a frequency histogram. Nucelotide proportions serve as an additional quality check on the extracted sequences.
 
   <img src="https://github.com/ericodle/GINSA/blob/main/example_images/nucleotide_frequencies.png" alt="seq_master.fasta" width="320" height="240">
   
