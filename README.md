@@ -163,31 +163,26 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] search_species_occurrences
 
-describe
+This function makes the initial GBIF API call, searching the occurrences database for all cases of the user's target species. search_species_occurrences generates a list of all matching occurrence IDs which will be used as a reference by downstream functions.
 
 - [ ] ssu_fasta_grab
 
-describe
+This function makes API calls to EMBI's metagenomic data repository, MGnify, and replaced the stored varaible "prefix_text" for each occurrence into the EMBI URL. Then, the function searches JSON tags on the terminal sites to find and download all FASTA files containing SSU contigs. 
 
 - [ ] mapseq_grab
-
-describe
+This function performs the same actions as ssu_fasta_grab but targets associated MAPSeq files rather than FASTA files.
 
 - [ ] find_target_in_mapseq
 
-describe
+This function opens the MAPSeq file for each occurrence sub-directory and searches for sequence labels corresponding to the target species. For example, if you searched "Lecudina longissima",  find_target_in_mapseq will search the MAPSeq file for all sequence labels containing the strings "Lecudina" and "longissima. If only a single taxon string is provided, such as for the genus-level search "Labyrinthula", then all sequence labels containing "Labyrinthula" will be stored in a list for downstream reference.
 
 - [ ] sift_fasta
 
-describe
-
-- [ ] analyze_subdir_fasta
-
-describe
+This function is complementary to find_target_in_mapseq, and utilizes the sequence label list generated previously to extract each SSU sequence contained in the (often very large) FASTA files grabbed from EMBI. The SSU contig FASTA files provided do not contain the names of the taxa they identify, hence the need for the MAPSeq file.
 
 - [ ] combine_csv_files
 
-describe
+Finally, once the SSU sequences are isolated for each distinct occurrence, they are gathered into a single file named "seq_master.fasta". Researchers may then use this extracted metagenomic data as they see fit.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -223,7 +218,7 @@ Citing
 
 
 EO [github.com/ericodle](https://github.com/ericodle/) : lead developer<br /> <br />
-SR: testing, presentation<br /> <br />
+SR [github.com/sirateer](https://github.com/sirateer) : testing, presentation<br /r> <br />
 KK: testing, image drafting<br /> <br />
 KW [Lab Site](https://wakemanlaboratory.com/about/) : theory oversight<br /> <br />
 
