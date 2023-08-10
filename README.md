@@ -183,7 +183,7 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] combine_csv_files()
 
-  Finally, once the SSU sequences are isolated for each distinct occurrence, they are gathered into a single file named "seq_master.fasta". Researchers may then use this extracted metagenomic data as they see fit.
+  Finally, once the SSU sequences are isolated for each distinct occurrence, they are gathered into a single file named "seq_master.fasta". Researchers may then use this extracted metagenomic data in their research project.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
