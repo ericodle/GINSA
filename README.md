@@ -136,14 +136,14 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] sequence_lengths.png
 
-  What is it?
+  This image visualizes the length of each sequence in the seq_master.fasta file. While the average length is around 200 bp, variability in length can be quite broad.
 
   <img src="https://github.com/ericodle/GINSA/blob/main/example_images/sequence_lengths.png" alt="seq_master.fasta" width="450" height="270">
 
 
 - [ ] nucleotide_frequencies.png
 
-  What is it?
+  This image plots the proportion of each nucleotide, A, T, C, and G, as a percentage histogram. Nucelotide proportions serve as an additional quality check on the extracted sequences.
 
   <img src="https://github.com/ericodle/GINSA/blob/main/example_images/nucleotide_frequencies.png" alt="seq_master.fasta" width="320" height="240">
   
