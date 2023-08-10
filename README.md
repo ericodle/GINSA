@@ -101,22 +101,22 @@ Welcome to the GbIf Next-gen Sequence Analyzer! (GINSA)
 Followed by a prompt asking for your project directory path:
 
 ```sh
-Enter the path to an empty folder for this project:/home/researcher/Desktop/lecudina_longissima
+'Enter the path to an empty folder for this project:'  /home/researcher/Desktop/lecudina_longissima
 ```
 
 Next, GINSA will ask for the species you wish to search. 
 Here, you can search either the full genus+species name, as in "Lecudina longissima", or just a genus, as in "Labyrinthula".
 
 ```sh
-Enter your target genus and species (i.e. Lecudina longissima):Lecudina longissima
+'Enter your target genus and species (i.e. Lecudina longissima):'  Lecudina longissima
 ```
 
 GINSA will respond with some confirmation details:
 
 ```sh
-Genus:  Lecudina
-Species:  longissima
-Number of occurrences found: 26
+'Genus:  Lecudina'
+'Species:  longissima'
+'Number of occurrences found: 26'
 ```
 
 GINSA will then proceed with the analysis, informing you of each step being performed in real time.
@@ -150,7 +150,8 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/occurrences.csv" alt="occurrences.csv" width="350" height="350">
 
-  What is it?
+  What is this file?
+occurrences.csv is a basic spreadsheet file that can be opened in Excel or any other csv reader. Data column 1 contains the GBIF occurrence IDs found during the taxon search, while data column 2 contains the country code from which the sample was taken. Data columns 3 and 4 contain latitude and longitude coordinates for each occurrence. Finally, data column 5, labeled "prefix_text", contains the EMBI MGnify project title sifted from the GBIF API for each occurrence. "prefix_text" can be replaced into the EMBI API link, leading GINSA to the download page for each SSU FASTA and MAPSeq file.
 
 
 - [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/seq_master.fasta" alt="seq_master.fasta" width="350" height="350">
