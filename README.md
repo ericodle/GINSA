@@ -6,7 +6,7 @@
     There is going to be a cool logo here as soon as P and Kyoko make it.
   </a>
 
-<h3 align="center">GINSA: <ins>G</ins>b<ins>I</ins>f <ins>N</ins>ext-gen <ins>S</ins>equence <ins>A</ins>nalyzer</h3>
+<h3 align="center">GINSA: <ins>G</ins>b<ins>I</ins>f <ins>N</ins>ext-gen <ins>S</ins>equence <ins>A</ins>ccumulator</h3>
 
   <p align="center">
     GINSA is a tool to help biodiversity researchers extract sequence and location data via GBIF.<br /> <br />
