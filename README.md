@@ -17,7 +17,7 @@
   GINSA downloads SSU rDNA sequences from each occurrence, combining them into a single FASTA file.<br /><br />
 
   GINSA has been tested on multiple taxa at both the species and genus level.
-  Those taxa include <i>Lecudina longissima</i> (26 occurrences), Lecudina tuzetae (309 occurrences), Labyrinthula spp. (2,603 occurrences), and Symbiodinium spp. (10,426 occurrences).
+  Those taxa include <i>Lecudina longissima</i> (26 occurrences), Lecudina tuzetae (309 occurrences), <i>Labyrinthula spp.</i> (2,603 occurrences), and <i>Symbiodinium spp.</i> (10,426 occurrences).
   
   We hope the revelation of these issues lead to community-driven solutions and, ultimately, a more robust and reliable GBIF.<br /><br />
 
