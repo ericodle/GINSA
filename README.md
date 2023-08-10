@@ -11,24 +11,17 @@
   <p align="center">
     GINSA is a tool to help biodiversity researchers extract sequence and location data via GBIF.<br /> <br />
     
-  As marine protistologists, the impetus for this project arose from obstacles faced during our own research.
-  Thus, we created a Python program that exploits GBIF's wealth of biogeography data and sequence links.
-  Users simply type their species of interest, then GINSA gathers metadata on each GBIF occurrence.
-  Gathered data includes the GBIF occurrence ID, latitude/longitude, and country of origin -- all saved to a simple spreadsheet.
-  GINSA then downloads SSU rDNA sequences for each occurrence, combining them into a single FASTA file.<br /><br />
+  GINZA is a Python program that exploits GBIF's biogeographic data and sequence links.
+  Users input their species of interest, then GINSA gathers metadata on each GBIF occurrence.
+  Data includes the GBIF occurrence ID, latitude/longitude, and country of origin -- all saved to a CSV spreadsheet.
+  GINSA downloads SSU rDNA sequences from each occurrence, combining them into a single FASTA file.<br /><br />
 
-  GINSA has been tested on multiple protist taxa at both the species and genus level.
-  Those taxa include Lecudina longissima (26 occurrences), Lecudina tuzetae (309 occurrences), Labyrinthula (2,603 occurrences), and Symbiodinium (10,426 occurrences).
-  During the development and testing phases, we discovered issues with the available data that deserve community attentions.
-  Specifically, we noticed two challenges: 1) A lack of SSU amplification site uniformity, and 2) unbalanced biogeographic representation.<br /><br />
+  GINSA has been tested on multiple taxa at both the species and genus level.
+  Those taxa include <i>Lecudina longissima</i> (26 occurrences), Lecudina tuzetae (309 occurrences), Labyrinthula spp. (2,603 occurrences), and Symbiodinium spp. (10,426 occurrences).
   
-  The first challenge refers to the relative size of the 18S SSU gene (approx. 1,800 bp) compared to the next-gen SSU sequence lengths (100-300 bp) recovered using GINSA.
-  Simply, sequences from different sites/teams/countries amplified different regions of the SSU gene. This is a problem when attempting to construct a phylogenetic tree, since the sequences are not comparable.
-  The second challenge refers to sampling bias present in the datasets. Taking Lecudina tuzetae as an example, the majority of sequences were obtained from Germany. Only a handful of sequences were from other countries such as Australia, Great Brittain, the United States, and Taiwan. 
   We hope the revelation of these issues lead to community-driven solutions and, ultimately, a more robust and reliable GBIF.<br /><br />
 
-  GINSA is the first tool of its kind to our knowledge, and is anticipated to save researchers countless hours in manual data collection.
-  In the spirit of GBIF, the code for GINSA is openly available, and we encourage collaboration in making it better. There are links below to report a bug or request a new feature.
+  GINSA is a unique tool utilizing the GBIF interface. In the spirit of GBIF, the code for GINSA is openly available, and we encourage community input and collaboration. There are links below to report a bug or request a new feature.
   Moreover, we invite everyone interested to follow along with the instructions provided below.
   
   <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
@@ -52,10 +45,10 @@ There is going to be a cool graphic here as soon as P and Kyoko make it.
 ## Quick Start: GINSA Jupyter Notebook
 
 For your convenience, a Jupyter Notebook is also provided via the Google Colab service.
-This option is nice if you want to see the code as the program runs. It also allows you to run the program using Google's computers rather than your own (the software runs in an internet browser).
-To use the Jupyter Notebook version of GINSA, simply click [RUN_GINSA.ipynb](https://github.com/ericodle/GINSA/blob/main/RUN_GINSA.ipynb) and then click the "Open in Colab" button at the top left.
+This option is convinient if you want to see the code, as the program runs. It also allows you to run the program using Google's computers rather than your own (the software runs in an internet browser).
+To use the Jupyter Notebook version of GINSA, click [RUN_GINSA.ipynb](https://github.com/ericodle/GINSA/blob/main/RUN_GINSA.ipynb) and then click the "Open in Colab" button at the top left.
 
-You can watch our instructional video for a guided walkthrough of how to use the Jupyter Notebook. *video link here*
+You can watch our instructional video, for a guided walkthrough of how to use the Jupyter Notebook. *video link here*
 
 
 ## Execute using RUN_GINSA.py
