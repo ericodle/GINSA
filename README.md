@@ -48,7 +48,9 @@ For your convenience, a Jupyter Notebook is also provided via the Google Colab s
 This option is convinient if you want to see the code, as the program runs. It also allows you to run the program using Google's computers rather than your own (the software runs in an internet browser).
 To use the Jupyter Notebook version of GINSA, click [RUN_GINSA.ipynb](https://github.com/ericodle/GINSA/blob/main/RUN_GINSA.ipynb) and then click the "Open in Colab" button at the top left.
 
-You can watch our instructional video, for a guided walkthrough of how to use the Jupyter Notebook. *video link here*
+You can watch our instructional video, for a guided walkthrough of how to use the Jupyter Notebook. 
+
+*video link here*
 
 
 ## Execute using RUN_GINSA.py
@@ -76,7 +78,7 @@ Once Python is installed, you will need to copy-paste these commands into your c
 
 Next, create an empty folder (directory) and take note of its full folder path (should look something like "/home/researcher/Desktop/GINSA_run"). All the project files will be saved there.
 Ensure you have at least 50 GB of available storage. The actual about of required space will depend on the number of occurrences available for the species you search.
-Ensure your internet connection is stable. You will be downloading a lot of large FASTA files. For instance, Lecudina tuzetae had 309 occurrences in GBIF, and RUN_GINSA took about 1 hour to complete.
+Ensure your internet connection is stable. You will be downloading a lot of large FASTA files. For instance, <i>Lecudina tuzetae</i> had 309 occurrences in GBIF, and RUN_GINSA took about 1 hour to complete.
 Ensure you know the full filepath of your RUN_GINSA.py file. We find it easiest to just leave it on the desktop.
 Open up a command line prompt (terminal) and execute the following command:
 
@@ -85,13 +87,13 @@ Open up a command line prompt (terminal) and execute the following command:
 python3 path_to_your_file/RUN_GINSA.py
 ```
 
-If everything went well, you should be greeted with the welcome message:
+If everything went well, you will be greeted with a welcome message:
 
 ```sh
 Welcome to the GbIf Next-gen Sequence Analyzer! (GINSA)
 ```
 
-Followed by a prompt asking for your project directory path:
+Followed by a prompt asking for your project folder (directory) path:
 
 ```sh
 'Enter the path to an empty folder for this project:'  /home/researcher/Desktop/lecudina_longissima
@@ -143,7 +145,7 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/occurrences.csv" alt="occurrences.csv" width="350" height="350">
 
-  This file is a basic spreadsheet that can be opened in Excel or any other csv reader. Data column 1 contains the GBIF occurrence IDs found during the taxon search, while data column 2 contains the country code from which the sample was taken. Data columns 3 and 4 contain latitude and longitude coordinates for each occurrence. Finally, data column 5, labeled "prefix_text", contains the EMBI MGnify project title sifted from the GBIF API for each occurrence. "prefix_text" can be replaced into the EMBI API link, leading GINSA to the download page for each SSU FASTA and MAPSeq file.
+  This file is a basic spreadsheet that can be opened in Excel or any other CSV reader. Data column 1 contains the GBIF occurrence IDs found during the taxon search, while data column 2 contains the country code from which the sample was taken. Data columns 3 and 4 contain latitude and longitude coordinates for each occurrence. Finally, data column 5, labeled "prefix_text", contains the EMBI MGnify project title sifted from the GBIF API for each occurrence. "prefix_text" can be replaced into the EMBI API link, leading GINSA to the download page for each SSU FASTA and MAPSeq file.
 
 
 - [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/seq_master.fasta" alt="seq_master.fasta" width="350" height="350">
