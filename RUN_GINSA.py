@@ -14,6 +14,7 @@ import gzip
 import shutil
 from Bio import SeqIO
 import matplotlib.pyplot as plt
+from requests.exceptions import HTTPError
 
 ######################
 #Define Core Functions
@@ -143,36 +144,47 @@ def ssu_fasta_grab(csv_file, proj_dir):
             continue  # Continue to the next iteration
 
         url = f"{api_base_url}/analyses/{prefix_text}/downloads"
-        response = requests.get(url)
-        data = response.json()
+        
+        try:
+            response = requests.get(url)
+            response.raise_for_status()  # Raise an exception for HTTP errors
+            data = response.json()
 
-        print(f"Processing {prefix_text}...")
+            print(f"Processing {prefix_text}...")
 
-        # Create a directory with the occurrence_id in the project directory
-        subdir_path = os.path.join(proj_dir, str(occurrence_id))
-        if not os.path.exists(subdir_path):
-            os.makedirs(subdir_path)
+            # Create a directory with the occurrence_id in the project directory
+            subdir_path = os.path.join(proj_dir, str(occurrence_id))
+            if not os.path.exists(subdir_path):
+                os.makedirs(subdir_path)
 
-        fasta_links = []
+            fasta_links = []
 
-        for entry in data['data']:
-            link_entry = entry['links']['self']
-            if link_entry.endswith("SSU.fasta.gz"):
-                fasta_links.append(link_entry)
+            for entry in data['data']:
+                link_entry = entry['links']['self']
+                if link_entry.endswith("SSU.fasta.gz"):
+                    fasta_links.append(link_entry)
 
-        if fasta_links:
-            print(f"Downloading {len(fasta_links)} file(s) for {prefix_text}...")
-            for fasta_link in fasta_links:
-                file_name = os.path.basename(fasta_link)
-                file_path = os.path.join(subdir_path, file_name)
-                wget.download(fasta_link, file_path)
-            print(" Download complete.")
-        else:
-            print(f"No fasta files found for {prefix_text}. Saving 'no_fasta.txt'...")
-            no_fasta_file = os.path.join(subdir_path, "no_fasta.txt")
-            with open(no_fasta_file, "w") as f:
-                f.write("No fasta files found.")
+            if fasta_links:
+                print(f"Downloading {len(fasta_links)} file(s) for {prefix_text}...")
+                for fasta_link in fasta_links:
+                    file_name = os.path.basename(fasta_link)
+                    file_path = os.path.join(subdir_path, file_name)
+                    wget.download(fasta_link, file_path)
+                print(" Download complete.")
+            else:
+                print(f"No fasta files found for {prefix_text}. Saving 'no_fasta.txt'...")
+                no_fasta_file = os.path.join(subdir_path, "no_fasta.txt")
+                with open(no_fasta_file, "w") as f:
+                    f.write("No fasta files found.")
 
+        except HTTPError as http_err:
+            if response.status_code == 404:
+                print(f"HTTP Error 404: MGnify data not found for ID {occurrence_id}")
+            else:
+                print(f"HTTP Error {response.status_code} occurred: {http_err}")
+        except Exception as err:
+            print(f"An error occurred while processing ID {occurrence_id}: {err}")
+            
 ###############################################################################################################################
 
 def mapseq_grab(csv_file, proj_dir):
@@ -193,43 +205,52 @@ def mapseq_grab(csv_file, proj_dir):
             continue  # Continue to the next iteration
 
         url = f"{api_base_url}/analyses/{prefix_text}/downloads"
-        response = requests.get(url)
-        data = response.json()
+        
+        try:
+            response = requests.get(url)
+            response.raise_for_status()  # Raise an exception for HTTP errors
+            data = response.json()
 
-        print(f"Processing {prefix_text}...")
+            print(f"Processing {prefix_text}...")
 
-        # Create a directory with the occurrence_id in the project directory
-        subdir_path = os.path.join(proj_dir, str(occurrence_id))
-        if not os.path.exists(subdir_path):
-            os.makedirs(subdir_path)
+            # Create a directory with the occurrence_id in the project directory
+            subdir_path = os.path.join(proj_dir, str(occurrence_id))
+            if not os.path.exists(subdir_path):
+                os.makedirs(subdir_path)
 
-        mapseq_links = []
+            mapseq_links = []
 
+            # Check if 'data' key is present in the response dictionary
+            if 'data' not in data:
+                print("Error: 'data' key not present in the API response.")
+                continue  # Continue to the next iteration
 
-        # Check if 'data' key is present in the response dictionary
-        if 'data' not in data:
-            print("Error: 'data' key not present in the API response.")
-            return
+            # Loop through the data to find links ending with "SSU_MAPSeq.mseq.gz"
+            for entry in data['data']:
+                link_entry = entry['links']['self']
+                if link_entry.endswith("SSU_MAPSeq.mseq.gz"):
+                    mapseq_links.append(link_entry)
 
-        # Loop through the data to find links ending with "MERGED_FASTQ_SSU_MAPSeq.mseq.gz"
-        for entry in data['data']:
-            link_entry = entry['links']['self']
-            if link_entry.endswith("SSU_MAPSeq.mseq.gz"):
-                mapseq_links.append(link_entry)
+            if mapseq_links:
+                print(f"Downloading {len(mapseq_links)} file(s) for {occurrence_id}...")
+                for mapseq_link in mapseq_links:
+                    file_name = os.path.basename(mapseq_link)
+                    file_path = os.path.join(subdir_path, file_name)
+                    wget.download(mapseq_link, file_path)
+                print(" Download complete.")
+            else:
+                print(f"No MAPSeq files found for {occurrence_id}. Saving 'no_mapseq.txt'...")
+                no_mapseq_file = os.path.join(subdir_path, "no_mapseq.txt")
+                with open(no_mapseq_file, "w") as f:
+                    f.write("No MAPSeq files found.")
 
-
-        if mapseq_links:
-            print(f"Downloading {len(mapseq_links)} file(s) for {occurrence_id}...")
-            for mapseq_link in mapseq_links:
-                file_name = os.path.basename(mapseq_link)
-                file_path = os.path.join(subdir_path, file_name)
-                wget.download(mapseq_link, file_path)
-            print(" Download complete.")
-        else:
-            print(f"No MAPSeq files found for {occurrence_id}. Saving 'no_mapseq.txt'...")
-            no_mapseq_file = os.path.join(subdir_path, "no_mapseq.txt")
-            with open(no_mapseq_file, "w") as f:
-                f.write("No MAPSeq files found.")
+        except HTTPError as http_err:
+            if response.status_code == 404:
+                print(f"HTTP Error 404: MGnify data not found for ID {occurrence_id}")
+            else:
+                print(f"HTTP Error {response.status_code} occurred: {http_err}")
+        except Exception as err:
+            print(f"An error occurred while processing ID {occurrence_id}: {err}")
 
 ###############################################################################################################################
 
