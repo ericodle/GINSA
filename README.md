@@ -32,17 +32,15 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## GINSA Workflow
+# About GINSA
 
-<img src="https://github.com/" alt="workflow" width="400" height="350">
-
-There is going to be a cool graphic here as soon as P and Kyoko make it.
+Cool Video Here
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-## Quick Start: GINSA Jupyter Notebook
+# OPTION 1: Quick start using the GINSA Jupyter Notebook
 
 For your convenience, a Jupyter Notebook is also provided via the Google Colab service.
 This option is convinient if you want to see the code, as the program runs. It also allows you to run the program using Google's computers rather than your own (the software runs in an internet browser).
@@ -53,7 +51,7 @@ You can watch our instructional video, for a guided walkthrough of how to use th
 *video link here*
 
 
-## Execute using RUN_GINSA.py
+# OPTION 2: Run locally using RUN_GINSA.py
 
 
 In the spirit of simplicity, GINSA can be run with a single file named RUN_GINSA.py.
@@ -154,7 +152,7 @@ Below is a description of each output file, using the search term "Lecudina long
 
 
 
-## Key Functions
+# Key Functions
 
 - [ ] search_species_occurrences()
 
@@ -209,8 +207,7 @@ Distributed under the GNU Lesser General Public License. See `LICENSE.txt` for m
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-Citing
-------
+##Citing
 
 
 EO [github.com/ericodle](https://github.com/ericodle/) : lead developer<br /> <br />
