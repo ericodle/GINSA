@@ -56,7 +56,7 @@ This file can be downloaded directly, or you can clone the repository by copy-pa
   ```sh
   # Replace "your_folderpath_here" with the actual folder where you want the project to go.
   cd /your_folderpath_here
-  git clone git@github.com:ericodle/GINSA.git
+  git clone https://github.com/ericodle/GINSA
   ```
 
 ### Install dependencies using pip
