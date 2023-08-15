@@ -88,7 +88,7 @@ python3 path_to_your_file/RUN_GINSA.py
 If everything went well, you will be greeted with a welcome message:
 
 ```sh
-Welcome to the GbIf Next-gen Sequence Analyzer! (GINSA)
+Welcome to the GbIf Next-gen Sequence Accumulator! (GINSA)
 ```
 
 Followed by a prompt asking for your project folder (directory) path:
