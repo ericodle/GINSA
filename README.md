@@ -21,10 +21,6 @@
   GINSA is a unique tool utilizing the GBIF interface. In the spirit of GBIF, the code for GINSA is openly available, and we encourage community input and collaboration. There are links below to report a bug or request a new feature.
   Moreover, we invite everyone interested to follow along with the instructions provided below.
   
-  <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
-  
-  <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
-  </p>
 </div>
 
 
