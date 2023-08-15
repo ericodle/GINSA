@@ -46,15 +46,13 @@ Watch our instructional video for a guided walkthrough of how to use the Jupyter
 
 *video link here*
 
-For your convenience, a Jupyter Notebook is also provided via the Google Colab service.
-This option is convinient if you want to see the code, as the program runs. It also allows you to run the program using Google's computers rather than your own (the software runs in an internet browser).
 To use the Jupyter Notebook version of GINSA, click [RUN_GINSA.ipynb](https://github.com/ericodle/GINSA/blob/main/RUN_GINSA.ipynb) and then click the "Open in Colab" button at the top left.
 
 
 # OPTION 2: Run locally using RUN_GINSA.py
 
 
-In the spirit of simplicity, GINSA can be run with a single file named RUN_GINSA.py.
+In the spirit of simplicity, GINSA runs using a single file named RUN_GINSA.py.
 This file can be downloaded directly, or you can clone the repository by copy-pasting these commands into your command prompt (terminal).
 
   ```sh
