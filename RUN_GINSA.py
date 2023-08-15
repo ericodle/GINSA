@@ -289,9 +289,13 @@ def sift_fasta(fasta_file_path, truncated_strings_path):
     sifted_data = {}  # Dictionary to store truncated_strings and their corresponding DNA sequences
 
     if truncated_strings_path:
-        with open(truncated_strings_path, 'r') as file:
-            lines = file.readlines()
-        lines = [line.strip() for line in lines]
+        try:
+            with open(truncated_strings_path, 'r') as file:
+                lines = file.readlines()
+            lines = [line.strip() for line in lines]
+        except FileNotFoundError:
+            print("Truncated strings file not found. Continuing without filtering.")
+            lines = []
 
 # Parse the FASTA file and extract sequences
     with open(fasta_file_path, "rt") as fasta_file:
@@ -307,6 +311,7 @@ def sift_fasta(fasta_file_path, truncated_strings_path):
                     break
 
     return sifted_data
+
 
 #######################################################################################################
 
