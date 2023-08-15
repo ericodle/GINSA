@@ -208,15 +208,13 @@ Distributed under the GNU Lesser General Public License. See `LICENSE.txt` for m
 ##Citing
 
 
-EO [github.com/ericodle](https://github.com/ericodle/) : lead developer<br /> <br />
+EO [github.com/ericodle](https://github.com/ericodle/) : development<br /> <br />
 
-SR [github.com/sirateer](https://github.com/sirateer) : debugging, workflow design<br /> <br />
+SR [github.com/sirateer](https://github.com/sirateer) : debugging, workflow presentation<br /> <br />
 
-KK: testing, logo design<br /> <br />
+KK [github.com/sirateer](https://github.com/kyokokurihara) : testing, logo design<br /> <br />
 
-KW [Lab Site](https://wakemanlaboratory.com/about/) : theory oversight<br /> <br />
-
-Manuscript citation coming soon!
+KW [Lab Site](https://wakemanlaboratory.com/about/) : theory, editing<br /> <br />
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
