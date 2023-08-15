@@ -12,12 +12,11 @@
     GINSA is a tool to help biodiversity researchers extract sequence and location data via GBIF.<br /> <br />
     
   GINZA is a Python program that exploits GBIF's biogeographic data and sequence links.
-  Users input their species of interest, then GINSA gathers metadata on each GBIF occurrence.
+ Users input their species of interest, then GINSA gathers data on each GBIF occurrence.
   Data includes the GBIF occurrence ID, latitude/longitude, and country of origin -- all saved to a CSV spreadsheet.
   GINSA downloads SSU rDNA sequences from each occurrence, combining them into a single FASTA file.<br /><br />
 
-  GINSA has been tested on multiple taxa at both the species and genus level.
-  Those taxa include <i>Lecudina longissima</i> (26 occurrences), Lecudina tuzetae (309 occurrences), and <i>Labyrinthula spp.</i> (2,603 occurrences).
+ GINSA has been tested on <i>Lecudina longissima</i> (26 occurrences), Lecudina tuzetae (309 occurrences), and <i>Labyrinthula spp.</i> (2,603 occurrences).
 
   GINSA is a unique tool utilizing the GBIF interface. In the spirit of GBIF, the code for GINSA is openly available, and we encourage community input and collaboration. There are links below to report a bug or request a new feature.
   Moreover, we invite everyone interested to follow along with the instructions provided below.
