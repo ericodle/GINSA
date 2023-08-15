@@ -59,6 +59,8 @@ This file can be downloaded directly, or you can clone the repository by copy-pa
   git clone https://github.com/ericodle/GINSA
   ```
 
+Once the repository is cloned successfully, you can navigate to your clone folder, open the "GINSA" folder contained within, and access RUN_GINSA.py.
+
 ### Install dependencies using pip
 Whether you downloaded RUN_GINSA.py or cloned the repository, you will need Python installed on your computer. GINSA was tested on Python3.
 Once Python is installed, you will need to copy-paste these commands into your command prompt (terminal).
@@ -96,13 +98,13 @@ Followed by a prompt asking for your project folder (directory) path:
 ```
 
 Next, GINSA will ask for the species you wish to search. 
-Here, you can search either the full genus+species name, as in "Lecudina longissima", or just a genus, as in "Labyrinthula".
+Here, you can search either the full genus + species name, as in "Lecudina longissima", or just a genus, as in "Labyrinthula".
 
 ```sh
 'Enter your target genus and species (i.e. Lecudina longissima):'  Lecudina longissima
 ```
 
-GINSA will respond with some confirmation details:
+GINSA will respond with confirmation details:
 
 ```sh
 'Genus:  Lecudina'
