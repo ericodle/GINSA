@@ -94,7 +94,7 @@ Welcome to the GbIf Next-gen Sequence Accumulator! (GINSA)
 Followed by a prompt asking for your project folder (directory) path:
 
 ```sh
-'Enter the path to an empty folder for this project:'  /home/researcher/Desktop/lecudina_longissima
+'Enter the path to an empty folder for this project:'  /home/researcher/Desktop/project_directory
 ```
 
 Next, GINSA will ask for the species you wish to search. 
