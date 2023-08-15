@@ -18,8 +18,6 @@
 
   GINSA has been tested on multiple taxa at both the species and genus level.
   Those taxa include <i>Lecudina longissima</i> (26 occurrences), Lecudina tuzetae (309 occurrences), and <i>Labyrinthula spp.</i> (2,603 occurrences).
-  
-  We hope the revelation of these issues lead to community-driven solutions and, ultimately, a more robust and reliable GBIF.<br /><br />
 
   GINSA is a unique tool utilizing the GBIF interface. In the spirit of GBIF, the code for GINSA is openly available, and we encourage community input and collaboration. There are links below to report a bug or request a new feature.
   Moreover, we invite everyone interested to follow along with the instructions provided below.
