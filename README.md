@@ -41,7 +41,7 @@ Cool Video Here
 
 Watch our instructional video for a guided walkthrough of how to use the Jupyter Notebook. 
 
-*video link here*
+[Walkthrough Video](https://youtu.be/qN3aNbaY8qQ)
 
 To use the Jupyter Notebook version of GINSA, click [RUN_GINSA.ipynb](https://github.com/ericodle/GINSA/blob/main/RUN_GINSA.ipynb) and then click the "Open in Colab" button at the top left.
 
