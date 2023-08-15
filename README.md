@@ -74,7 +74,7 @@ Once Python is installed, you will need to copy-paste these commands into your c
   pip install biopython
   ```
 
-Next, create an empty folder (directory) and take note of its full folder path (should look something like "/home/researcher/Desktop/GINSA_run"). All the project files will be saved there.
+Next, create an empty folder (directory) and take note of its full folder path (should look something like "/home/researcher/Desktop/project_directory"). All the project files will be saved there.
 Ensure you have at least 50 GB of available storage. The actual about of required space will depend on the number of occurrences available for the species you search.
 Ensure your internet connection is stable. You will be downloading a lot of large FASTA files. For instance, <i>Lecudina tuzetae</i> had 309 occurrences in GBIF, and RUN_GINSA took about 1 hour to complete.
 Ensure you know the full filepath of your RUN_GINSA.py file. We find it easiest to just leave it on the desktop.
