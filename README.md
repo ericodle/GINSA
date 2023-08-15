@@ -212,7 +212,7 @@ EO [github.com/ericodle](https://github.com/ericodle/) : development<br /> <br /
 
 SR [github.com/sirateer](https://github.com/sirateer) : debugging, workflow presentation<br /> <br />
 
-KK [github.com/sirateer](https://github.com/kyokokurihara) : testing, logo design<br /> <br />
+KK [github.com/kyokokurihara](https://github.com/kyokokurihara) : testing, logo design<br /> <br />
 
 KW [Lab Site](https://wakemanlaboratory.com/about/) : theory, editing<br /> <br />
 
