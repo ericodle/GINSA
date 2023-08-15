@@ -71,9 +71,7 @@ Once Python is installed, you will need to copy-paste these commands into your c
   pip install biopython
   ```
 
-Next, create an empty folder (directory) and take note of its full folder path (should look something like "/home/researcher/Desktop/project_directory"). All the project files will be saved there.
-First, ensure you have at least 100 GB of available storage. The actual amount of required space will depend on the number of occurrences available for the species you search.
-Second, ensure your internet connection is stable. You will be downloading a lot of large FASTA files. For instance, <i>Lecudina tuzetae</i> had 309 occurrences in GBIF, and RUN_GINSA.py took about 1 hour to complete.
+Next, create an empty folder (directory) and take note of its full folder path (should look something like "/home/researcher/Desktop/project_directory"). Importantly, be sure to not include spaces in your project directory name. While the actual amount of required space will depend on the number of occurrences available for the species you search, ensure you have at least 100 GB of available storage. You will be downloading a lot of large FASTA files. Lecudina longissima has 26 occurrences and took 15 minutes, while Lecudina tuzetae has 309 occurrences and took 1 hour to complete. Labyrinthula has around 2,000 occurrences and took about 8 hours. 
 
 ### Run program
 
