@@ -27,8 +27,7 @@
 <!-- ABOUT THE PROJECT -->
 # About GINSA
 
-Cool Video Here
-
+[GINSA Overview Video](https://www.youtube.com/watch?v=PrWM5vmqYO8)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
