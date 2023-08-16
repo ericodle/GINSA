@@ -116,7 +116,7 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] sifting_results.png
 
-  This image plots a simple histogram showing how many occurrence sub-folders actually contain FASTA and MAPSeq files. Some occurrences in GBIF darw from data types other than next-gen sequences, such as human observation or Sanger sequencing. In the future, we may expand the scope of GINSA to grab Sanger SSU sequences from other online databases as such as the European Nucleotide Archive (ENA), the National Center for Biotechnology Information (NCBI), the DNA Data Bank of Japan (DDBJ), and SILVA (Latin for 'forest').
+  This image plots a simple histogram showing how many occurrence sub-folders actually contain FASTA and MAPSeq files. Some occurrences in GBIF draw from data types other than next-gen sequences, such as human observation or Sanger sequencing. In the future, we may expand the scope of GINSA to grab Sanger SSU sequences from other online databases as such as the European Nucleotide Archive (ENA), the National Center for Biotechnology Information (NCBI), the DNA Data Bank of Japan (DDBJ), and SILVA (Latin for 'forest').
 
   <img src="https://github.com/ericodle/GINSA/blob/main/example_images/sifting_results.png" alt="seq_master.fasta" width="350" height="350">
 
@@ -129,7 +129,7 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] nucleotide_frequencies.png
 
-  This image plots the proportion of each nucleotide, A, T, C, and G, as a frequency histogram. Nucelotide proportions serve as an additional quality check on the extracted sequences.
+  This image plots the proportion of each nucleotide, A, T, C, and G, as a frequency histogram. Nucleotide proportions serve as an additional quality check on the extracted sequences.
 
   <img src="https://github.com/ericodle/GINSA/blob/main/example_images/nucleotide_frequencies.png" alt="seq_master.fasta" width="320" height="240">
   
@@ -153,7 +153,7 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] ssu_fasta_grab()
 
-  This function makes API calls to EMBI's metagenomic data repository, MGnify, and replaced the stored varaible "prefix_text" for each occurrence into the EMBI URL. Then, the function searches JSON tags on the terminal sites to find and download all FASTA files containing SSU contigs. 
+  This function makes API calls to EMBI's metagenomic data repository, MGnify, and replaced the stored variable "prefix_text" for each occurrence into the EMBI URL. Then, the function searches JSON tags on the terminal sites to find and download all FASTA files containing SSU contigs. 
 
 - [ ] mapseq_grab()
 
