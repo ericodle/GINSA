@@ -524,7 +524,7 @@ def main():
 
     proj_dir = input("Enter the path to an empty folder for this project:  ")
 
-    species_name = input("Enter your target taxon in genus-species format (i.e. Lecudina longissima). You can also enter Genus alone: ")
+    species_name = input("Enter your target taxon in genus-species format (e.g. Lecudina longissima). You can also enter Genus alone: ")
 
     gen_sp = species_name.split()
 
