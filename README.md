@@ -9,7 +9,14 @@
 <h3 align="center">GINSA: <ins>G</ins>b<ins>I</ins>f <ins>N</ins>ext-gen <ins>S</ins>equence <ins>A</ins>ccumulator</h3>
 
   <p align="center">
-    GINSA is a tool to help biodiversity researchers extract sequence and location data via GBIF.<br /> <br />
+ 
+  
+</div>
+
+
+<!-- ABOUT THE PROJECT -->
+# About GINSA
+   GINSA is a tool to help biodiversity researchers extract sequence and location data via GBIF.<br /> <br />
     
   GINZA is a Python program that exploits GBIF's biogeographic data and sequence links.
  Users input their species of interest, then GINSA gathers data on each GBIF occurrence.
@@ -20,13 +27,6 @@
 
   GINSA is a unique tool utilizing the GBIF interface. In the spirit of GBIF, the code for GINSA is openly available, and we encourage community input and collaboration. There are links below to report a bug or request a new feature.
   Moreover, we invite everyone interested to follow along with the instructions provided below.
-  
-</div>
-
-
-<!-- ABOUT THE PROJECT -->
-# About GINSA
-
 [GINSA Overview Video](https://www.youtube.com/watch?v=PrWM5vmqYO8)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
