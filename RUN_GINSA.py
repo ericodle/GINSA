@@ -139,7 +139,7 @@ def ssu_fasta_grab(csv_file, proj_dir):
             print(f"MGnify link not found in occurrence metadata for ID {occurrence_id}.")
             continue  # Continue to the next iteration
 
-        if "MGY" not in prefix_text.upper():  # Confirm prefix text points to EMBI MGnify
+        if "MGY" not in prefix_text.upper():  # Confirm prefix text points to EMBL MGnify
             print(f"MGnify link not found in occurrence metadata for ID {occurrence_id}.")
             continue  # Continue to the next iteration
 
@@ -200,7 +200,7 @@ def mapseq_grab(csv_file, proj_dir):
             print(f"MGnify link not found in occurrence metadata for ID {occurrence_id}.")
             continue  # Continue to the next iteration
 
-        if "MGY" not in prefix_text.upper():  # Confirm prefix text points to EMBI MGnify
+        if "MGY" not in prefix_text.upper():  # Confirm prefix text points to EMBL MGnify
             print(f"MGnify link not found in occurrence metadata for ID {occurrence_id}.")
             continue  # Continue to the next iteration
 
