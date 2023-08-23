@@ -136,7 +136,7 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/occurrences.csv" alt="occurrences.csv" width="350" height="350">
 
-  This file is a basic spreadsheet that can be opened in Excel or any other CSV reader. Data column 1 contains the GBIF occurrence IDs found during the taxon search, while data column 2 contains the country code from which the sample was taken. Data columns 3 and 4 contain latitude and longitude coordinates for each occurrence. Finally, data column 5, labeled "prefix_text", contains the EMBI MGnify project title sifted from the GBIF API for each occurrence. "prefix_text" can be replaced into the EMBI API link, leading GINSA to the download page for each SSU FASTA and MAPSeq file.
+  This file is a basic spreadsheet that can be opened in Excel or any other CSV reader. Data column 1 contains the GBIF occurrence IDs found during the taxon search, while data column 2 contains the country code from which the sample was taken. Data columns 3 and 4 contain latitude and longitude coordinates for each occurrence. Finally, data column 5, labeled "prefix_text", contains the EMBL MGnify project title sifted from the GBIF API for each occurrence. "prefix_text" can be replaced into the EMBL API link, leading GINSA to the download page for each SSU FASTA and MAPSeq file.
 
 
 - [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/seq_master.fasta" alt="seq_master.fasta" width="350" height="350">
@@ -153,7 +153,7 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] ssu_fasta_grab()
 
-  This function makes API calls to EMBI's metagenomic data repository, MGnify, and replaced the stored variable "prefix_text" for each occurrence into the EMBI URL. Then, the function searches JSON tags on the terminal sites to find and download all FASTA files containing SSU contigs. 
+  This function makes API calls to EMBL's metagenomic data repository, MGnify, and replaced the stored variable "prefix_text" for each occurrence into the EMBL URL. Then, the function searches JSON tags on the terminal sites to find and download all FASTA files containing SSU contigs. 
 
 - [ ] mapseq_grab()
 
@@ -165,7 +165,7 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] sift_fasta()
 
-  This function is complementary to find_target_in_mapseq, and utilizes the sequence label list generated previously to extract each SSU sequence contained in the (often very large) FASTA files grabbed from EMBI. The SSU contig FASTA files provided do not contain the names of the taxa they identify, hence the need for the MAPSeq file.
+  This function is complementary to find_target_in_mapseq, and utilizes the sequence label list generated previously to extract each SSU sequence contained in the (often very large) FASTA files grabbed from EMBL. The SSU contig FASTA files provided do not contain the names of the taxa they identify, hence the need for the MAPSeq file.
 
 - [ ] combine_csv_files()
 
