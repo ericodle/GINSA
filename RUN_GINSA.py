@@ -411,7 +411,7 @@ def check_dir(root_directory):
     plt.ylabel('Number of Sub-folders')
     plt.title('Sub-folders Containing Sequences')
     plt.tight_layout()
-    plt.savefig(root_directory + "/sifting_results")
+    plt.savefig(root_directory + "/sifting_results", dpi=600)
 
 ##################################################################################################################################
 
@@ -476,7 +476,7 @@ def seq_master_lengths(fasta_file, root_directory):
     plt.title('Sequence Lengths from FASTA File')
     plt.xticks(rotation=45, ha='right')
     plt.tight_layout()
-    plt.savefig(os.path.join(root_directory, "sequence_lengths.png"))
+    plt.savefig(os.path.join(root_directory, "sequence_lengths.png"), dpi=600)
 
 ##################################################################################################################################
 
@@ -509,7 +509,7 @@ def analyze_nucleotide_freqs(fasta_file, root_directory):
     print("Overall Nucleotide Frequencies:")
     for nucleotide, count in nucleotide_freq.items():
         print(f"{nucleotide}: {count} ({(count / total_count) * 100:.2f}%)")
-    plt.savefig(root_directory + "/nucleotide_frequencies")
+    plt.savefig(root_directory + "/nucleotide_frequencies", dpi=600)
 
 ##################################################################################################################################
 
