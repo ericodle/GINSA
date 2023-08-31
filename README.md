@@ -18,7 +18,7 @@
 # About GINSA
    GINSA is a tool to help biodiversity researchers extract sequence and location data via GBIF.<br /> <br />
     
-  GINZA is a Python program that exploits GBIF's biogeographic data and sequence links.
+  GINSA is a Python program that exploits GBIF's biogeographic data and sequence links.
  Users input their species of interest, then GINSA gathers data on each GBIF occurrence.
   Data includes the GBIF occurrence ID, latitude/longitude, and country of origin -- all saved to a CSV spreadsheet.
   GINSA downloads SSU rDNA sequences from each occurrence, combining them into a single FASTA file.<br /><br />
