@@ -195,9 +195,7 @@ If this is your first pull request, just follow the steps below:
 <!-- LICENSE -->
 ## License
 
-Distributed under the GNU Lesser General Public License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#top">back to top</a>)</p>
+This project is open-source and is released under the [MIT License](LICENSE). Feel free to use and build upon our work while giving appropriate credit.
 
 
 ##Citing
