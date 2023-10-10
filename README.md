@@ -173,23 +173,13 @@ Below is a description of each output file, using the search term "Lecudina long
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+## Citing Our Research
 
+Our research paper provides a comprehensive overview of the methodology, results, and insights derived from this repository. You can access the full paper by following this link: [LINK](https://).
 
-<!-- CONTRIBUTING -->
-## Contributing
+If you find our research and code useful in your work, we kindly request that you cite our associated research paper in your publications. You can find the paper through the following citation:
 
-Contributions make the open source community great. Everyone has a unique combination of skills and experience. Your input is **highly valued**.
-If you have ideas for improvement, please fork the repo and create a pull request. 
-If this is your first pull request, just follow the steps below:
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
+COMING SOON
 
 
 <!-- LICENSE -->
@@ -197,17 +187,6 @@ If this is your first pull request, just follow the steps below:
 
 This project is open-source and is released under the [MIT License](LICENSE). Feel free to use and build upon our work while giving appropriate credit.
 
-
-##Citing
-
-
-EO [github.com/ericodle](https://github.com/ericodle/) : development<br /> <br />
-
-SR [github.com/sirateer](https://github.com/sirateer) : debugging, workflow presentation<br /> <br />
-
-KK [github.com/kyokokurihara](https://github.com/kyokokurihara) : testing, logo design<br /> <br />
-
-KW [Lab Site](https://wakemanlaboratory.com/about/) : theory, editing<br /> <br />
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
