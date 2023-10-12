@@ -179,7 +179,7 @@ Our research paper provides a comprehensive overview of the methodology, results
 
 If you find our research and code useful in your work, we kindly request that you cite our associated research paper in your publications. You can find the paper through the following citation:
 
-COMING SOON
+*Manuscript being drafted
 
 
 <!-- LICENSE -->
