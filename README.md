@@ -38,13 +38,13 @@ Watch our instructional video for a guided walkthrough of how to use the Jupyter
 
 [Walkthrough Video](https://youtu.be/qN3aNbaY8qQ)
 
-To use the Jupyter Notebook version of GINSA, click [RUN_GINSA.ipynb](https://github.com/ericodle/GINSA/blob/main/RUN_GINSA.ipynb) and then click the "Open in Colab" button at the top left.
+To use the Jupyter Notebook version of GINSA, click [GINSA.ipynb](https://github.com/ericodle/GINSA/blob/main/GINSA.ipynb) and then click the "Open in Colab" button at the top left.
 
 
-# OPTION 2: Run locally using RUN_GINSA.py
+# OPTION 2: Run locally using GINSA.py
 
 
-In the spirit of simplicity, GINSA runs using a single file named RUN_GINSA.py.
+In the spirit of simplicity, GINSA runs using a single file named GINSA.py.
 This file can be downloaded directly, or you can clone the repository by copy-pasting these commands into your command prompt (terminal).
 
   ```sh
@@ -53,10 +53,10 @@ This file can be downloaded directly, or you can clone the repository by copy-pa
   git clone https://github.com/ericodle/GINSA
   ```
 
-Once the repository is cloned successfully, you can navigate to your clone folder, open the "GINSA" folder contained within, and access RUN_GINSA.py.
+Once the repository is cloned successfully, you can navigate to your clone folder, open the "GINSA" folder contained within, and access GINSA.py.
 
 ### Install dependencies using pip
-Whether you downloaded RUN_GINSA.py or cloned the repository, you will need Python installed on your computer. GINSA was tested on Python3.
+Whether you downloaded GINSA.py or cloned the repository, you will need Python installed on your computer. GINSA was tested on Python3.
 Once Python is installed, you will need to copy-paste these commands into your command prompt (terminal).
 
   ```sh
@@ -73,8 +73,8 @@ Next, create an empty folder (directory) and take note of its full folder path (
 Open up a command line prompt (terminal) and execute the following command:
 
 ```sh
-# Run the Python script titled RUN_GINSA.py
-python3 path_to_your_file/RUN_GINSA.py
+# Run the Python script titled GINSA.py
+python3 path_to_your_file/GINSA.py
 ```
 
 If everything went well, you will be greeted with a welcome message:
