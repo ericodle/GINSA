@@ -7,6 +7,7 @@ import json
 import urllib.parse
 import os
 import csv
+import sys
 import requests
 import pandas as pd
 import wget
@@ -100,7 +101,7 @@ def generate_csv(occurrence_ids, proj_dir):
                             'prefix_text': prefix_text
                         })
                     else:
-                        print(f"occurrenceID not found for occurrence ID {occurrence_id}. Skipping.")
+                        print(f"occurrenceID not found for occurrence {occurrence_id}. Skipping.")
 
                 except ValueError:
                     print(f"Failed to parse JSON for occurrence {occurrence_id}.")
@@ -130,17 +131,17 @@ def ssu_fasta_grab(csv_file, proj_dir):
     # Load the CSV file into a DataFrame
     df = pd.read_csv(csv_file)
 
-    # Replace with your actual MGnify API endpoint
+    # Replace with your actual ENA API endpoint
     api_base_url = "https://www.ebi.ac.uk/metagenomics/api/v1"
 
     # Iterate through the DataFrame and process each occurrence
     for prefix_text, occurrence_id in zip(df['prefix_text'], df['occurrence_id']):
         if pd.isna(prefix_text):  # Check if prefix_text is NaN
-            print(f"MGnify link not found in occurrence metadata for ID {occurrence_id}.")
+            print(f"ENA link not found in occurrence metadata for ID {occurrence_id}.")
             continue  # Continue to the next iteration
 
-        if "MGY" not in prefix_text.upper():  # Confirm prefix text points to EMBL MGnify
-            print(f"MGnify link not found in occurrence metadata for ID {occurrence_id}.")
+        if "MGY" not in prefix_text.upper():  # Confirm prefix text points to EMBL ENA
+            print(f"ENA link not found in occurrence metadata for ID {occurrence_id}.")
             continue  # Continue to the next iteration
 
         url = f"{api_base_url}/analyses/{prefix_text}/downloads"
@@ -179,7 +180,7 @@ def ssu_fasta_grab(csv_file, proj_dir):
 
         except HTTPError as http_err:
             if response.status_code == 404:
-                print(f"HTTP Error 404: MGnify data not found for ID {occurrence_id}")
+                print(f"HTTP Error 404: ENA data not found for ID {occurrence_id}")
             else:
                 print(f"HTTP Error {response.status_code} occurred: {http_err}")
         except Exception as err:
@@ -191,17 +192,17 @@ def mapseq_grab(csv_file, proj_dir):
     # Load the CSV file into a DataFrame
     df = pd.read_csv(csv_file)
 
-    # Replace with your actual MGnify API endpoint
+    # Replace with your actual ENA API endpoint
     api_base_url = "https://www.ebi.ac.uk/metagenomics/api/v1"
 
     # Iterate through the DataFrame and process each occurrence
     for prefix_text, occurrence_id in zip(df['prefix_text'], df['occurrence_id']):
         if pd.isna(prefix_text):  # Check if prefix_text is NaN
-            print(f"MGnify link not found in occurrence metadata for ID {occurrence_id}.")
+            print(f"ENA link not found in occurrence metadata for ID {occurrence_id}.")
             continue  # Continue to the next iteration
 
-        if "MGY" not in prefix_text.upper():  # Confirm prefix text points to EMBL MGnify
-            print(f"MGnify link not found in occurrence metadata for ID {occurrence_id}.")
+        if "MGY" not in prefix_text.upper():  # Confirm prefix text points to EMBL ENA
+            print(f"ENA link not found in occurrence metadata for ID {occurrence_id}.")
             continue  # Continue to the next iteration
 
         url = f"{api_base_url}/analyses/{prefix_text}/downloads"
@@ -246,7 +247,7 @@ def mapseq_grab(csv_file, proj_dir):
 
         except HTTPError as http_err:
             if response.status_code == 404:
-                print(f"HTTP Error 404: MGnify data not found for ID {occurrence_id}")
+                print(f"HTTP Error 404: ENA data not found for ID {occurrence_id}")
             else:
                 print(f"HTTP Error {response.status_code} occurred: {http_err}")
         except Exception as err:
@@ -394,12 +395,12 @@ def check_for_csv(subdirectory_path):
 
 ##################################################################################################################################
 
-def check_dir(root_directory):
-    subdirectories = [d for d in os.listdir(root_directory) if os.path.isdir(os.path.join(root_directory, d))]
+def check_dir(proj_dir):
+    subdirectories = [d for d in os.listdir(proj_dir) if os.path.isdir(os.path.join(proj_dir, d))]
 
     presence_data = []
     for subdir in subdirectories:
-        has_csv = check_for_csv(os.path.join(root_directory, subdir))
+        has_csv = check_for_csv(os.path.join(proj_dir, subdir))
         presence_data.append(has_csv)
 
     num_have_csv = presence_data.count(True)
@@ -411,21 +412,21 @@ def check_dir(root_directory):
     plt.ylabel('Number of Sub-folders')
     plt.title('Sub-folders Containing Sequences')
     plt.tight_layout()
-    plt.savefig(root_directory + "/sifting_results", dpi=600)
+    plt.savefig(proj_dir + "/sifting_results", dpi=600)
 
 ##################################################################################################################################
 
-def combine_csv_files(root_directory):
-    subdirectories = [d for d in os.listdir(root_directory) if os.path.isdir(os.path.join(root_directory, d))]
+def combine_csv_files(proj_dir):
+    subdirectories = [d for d in os.listdir(proj_dir) if os.path.isdir(os.path.join(proj_dir, d))]
 
     combined_sequences = {}
 
     for subdir in subdirectories:
-        if check_for_csv(os.path.join(root_directory, subdir)):
+        if check_for_csv(os.path.join(proj_dir, subdir)):
             subdir_sequences = []
-            for csv_file in os.listdir(os.path.join(root_directory, subdir)):
+            for csv_file in os.listdir(os.path.join(proj_dir, subdir)):
                 if csv_file.endswith('.csv'):
-                    csv_path = os.path.join(root_directory, subdir, csv_file)
+                    csv_path = os.path.join(proj_dir, subdir, csv_file)
                     csv_content = pd.read_csv(csv_path)
                     if 'Sequences' in csv_content.columns:
                         sequences_data = csv_content['Sequences']
@@ -443,7 +444,7 @@ def combine_csv_files(root_directory):
                 for i, sequence in enumerate(sequences, start=1):
                     fasta_content += f">{subdir}_{i}\n{sequence}\n"
 
-        fasta_path = os.path.join(root_directory, 'seq_master.fasta')
+        fasta_path = os.path.join(proj_dir, 'seq_master.fasta')
         with open(fasta_path, 'w') as fasta_file:
             fasta_file.write(fasta_content)
         print("Combined sequences saved as 'seq_master.fasta' in the root directory.")
@@ -455,32 +456,39 @@ def combine_csv_files(root_directory):
 
 ##################################################################################################################################
 
-def seq_master_lengths(fasta_file, root_directory):
+
+def seq_master_lengths(fasta_file, proj_dir):
     # Check if the FASTA file exists
     if not os.path.exists(fasta_file):
         print(f"Error: The file '{fasta_file}' does not exist.")
         return
 
-    # Read sequences from the FASTA file
-    sequences = list(SeqIO.parse(fasta_file, "fasta"))
+    try:
+        # Read sequences from the FASTA file
+        sequences = list(SeqIO.parse(fasta_file, "fasta"))
 
-    # Get sequence names and lengths
-    seq_names = [seq.id for seq in sequences]
-    seq_lengths = [len(seq) for seq in sequences]
+        # Get sequence names and lengths
+        seq_names = [seq.id for seq in sequences]
+        seq_lengths = [len(seq) for seq in sequences]
 
-    # Create a bar plot to visualize sequence lengths
-    plt.figure(figsize=(15, 9))
-    plt.bar(seq_names, seq_lengths, color='blue')
-    plt.xlabel('Sequence Names')
-    plt.ylabel('Sequence Length')
-    plt.title('Sequence Lengths from FASTA File')
-    plt.xticks(rotation=45, ha='right')
-    plt.tight_layout()
-    plt.savefig(os.path.join(root_directory, "sequence_lengths.png"), dpi=600)
+        # Create a bar plot to visualize sequence lengths
+        plt.figure(figsize=(15, 9))
+        plt.bar(seq_names, seq_lengths, color='blue')
+        plt.xlabel('Sequence Names')
+        plt.ylabel('Sequence Length')
+        plt.title('Sequence Lengths from FASTA File')
+        plt.xticks(rotation=45, ha='right')
+        plt.tight_layout()
+        
+        # Save the plot to the specified directory
+        plt.savefig(os.path.join(proj_dir, "sequence_lengths.png"), dpi=600)
+
+    except Exception as e:
+        print(f"Error reading sequences from '{fasta_file}': {e}")
 
 ##################################################################################################################################
 
-def analyze_nucleotide_freqs(fasta_file, root_directory):
+def analyze_nucleotide_freqs(fasta_file, proj_dir):
 
     sequences = list(SeqIO.parse(fasta_file, "fasta"))
 
@@ -509,7 +517,7 @@ def analyze_nucleotide_freqs(fasta_file, root_directory):
     print("Overall Nucleotide Frequencies:")
     for nucleotide, count in nucleotide_freq.items():
         print(f"{nucleotide}: {count} ({(count / total_count) * 100:.2f}%)")
-    plt.savefig(root_directory + "/nucleotide_frequencies", dpi=600)
+    plt.savefig(proj_dir + "/nucleotide_frequencies", dpi=600)
 
 ##################################################################################################################################
 
@@ -568,7 +576,7 @@ def main():
     print("Occurrence metadata CSV created")
     csv_file = proj_dir+"/occurrences.csv"
 
-    print("Grabbing FASTA and MAPSeq files from MGnify via GBIF...")
+    print("Grabbing FASTA and MAPSeq files from ENA via GBIF...")
     ssu_fasta_grab(csv_file, proj_dir)
     mapseq_grab(csv_file, proj_dir)
 
@@ -588,6 +596,10 @@ def main():
 
     print("Aggregating sequences into a master csv file.")
     fasta_path = combine_csv_files(proj_dir)
+
+    if fasta_path is None:
+        print("Exiting program. No sequences found.")
+        sys.exit()
 
     print("Generating a master FASTA file containing your new sequences.")
     seq_master_lengths(fasta_path, proj_dir)
