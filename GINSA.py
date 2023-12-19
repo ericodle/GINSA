@@ -159,19 +159,12 @@ def ssu_fasta_grab(csv_file, proj_dir):
 
             fasta_links = []
 
-            for entry in data['data']:
+            for entry in data.get('data', []):
                 link_entry = entry['links']['self']
                 if link_entry.endswith("SSU.fasta.gz"):
                     fasta_links.append(link_entry)
 
-            if fasta_links:
-                print(f"Downloading {len(fasta_links)} file(s) for {prefix_text}...")
-                for fasta_link in fasta_links:
-                    file_name = os.path.basename(fasta_link)
-                    file_path = os.path.join(subdir_path, file_name)
-                    wget.download(fasta_link, file_path)
-                print(" Download complete.")
-            else:
+            if not fasta_links:
                 print(f"No fasta files found for {prefix_text}. Saving 'no_fasta.txt'...")
                 no_fasta_file = os.path.join(subdir_path, "no_fasta.txt")
                 with open(no_fasta_file, "w") as f:
@@ -184,6 +177,7 @@ def ssu_fasta_grab(csv_file, proj_dir):
                 print(f"HTTP Error {response.status_code} occurred: {http_err}")
         except Exception as err:
             print(f"An error occurred while processing ID {occurrence_id}: {err}")
+
             
 ###############################################################################################################################
 
@@ -226,19 +220,12 @@ def mapseq_grab(csv_file, proj_dir):
                 continue  # Continue to the next iteration
 
             # Loop through the data to find links ending with "SSU_MAPSeq.mseq.gz"
-            for entry in data['data']:
+            for entry in data.get('data', []):
                 link_entry = entry['links']['self']
                 if link_entry.endswith("SSU_MAPSeq.mseq.gz"):
                     mapseq_links.append(link_entry)
 
-            if mapseq_links:
-                print(f"Downloading {len(mapseq_links)} file(s) for {occurrence_id}...")
-                for mapseq_link in mapseq_links:
-                    file_name = os.path.basename(mapseq_link)
-                    file_path = os.path.join(subdir_path, file_name)
-                    wget.download(mapseq_link, file_path)
-                print(" Download complete.")
-            else:
+            if not mapseq_links:
                 print(f"No MAPSeq files found for {occurrence_id}. Saving 'no_mapseq.txt'...")
                 no_mapseq_file = os.path.join(subdir_path, "no_mapseq.txt")
                 with open(no_mapseq_file, "w") as f:
@@ -426,10 +413,13 @@ def combine_csv_files(root_directory):
             for csv_file in os.listdir(os.path.join(root_directory, subdir)):
                 if csv_file.endswith('.csv'):
                     csv_path = os.path.join(root_directory, subdir, csv_file)
-                    csv_content = pd.read_csv(csv_path)
-                    if 'Sequences' in csv_content.columns:
-                        sequences_data = csv_content['Sequences']
-                        subdir_sequences.extend(sequences_data)
+                    try:
+                        csv_content = pd.read_csv(csv_path)
+                        if 'Sequences' in csv_content.columns:
+                            sequences_data = csv_content['Sequences']
+                            subdir_sequences.extend(sequences_data)
+                    except Exception as e:
+                        print(f"Error reading CSV file '{csv_path}': {e}")
 
             if subdir_sequences:
                 combined_sequences[subdir] = subdir_sequences
@@ -449,13 +439,38 @@ def combine_csv_files(root_directory):
         print("Combined sequences saved as 'seq_master.fasta' in the root directory.")
 
         return fasta_path
-
     else:
         print("No sequences found in subdirectories.")
+        return None
 
 ##################################################################################################################################
 
 def seq_master_lengths(fasta_file, root_directory):
+    # Check if the FASTA file exists
+    if fasta_file is not None and os.path.exists(fasta_file):
+        # Read sequences from the FASTA file
+        sequences = list(SeqIO.parse(fasta_file, "fasta"))
+
+        # Get sequence names and lengths
+        seq_names = [seq.id for seq in sequences]
+        seq_lengths = [len(seq) for seq in sequences]
+
+        # Create a bar plot to visualize sequence lengths
+        plt.figure(figsize=(15, 9))
+        plt.bar(seq_names, seq_lengths, color='blue')
+        plt.xlabel('Sequence Names')
+        plt.ylabel('Sequence Length')
+        plt.title('Sequence Lengths from FASTA File')
+        plt.xticks(rotation=45, ha='right')
+        plt.tight_layout()
+
+##################################################################################################################################
+
+def analyze_nucleotide_freqs(fasta_file, root_directory):
+    if fasta_file is None:
+        print("No sequences found. Skipping nucleotide frequency analysis.")
+        return
+
     # Check if the FASTA file exists
     if not os.path.exists(fasta_file):
         print(f"Error: The file '{fasta_file}' does not exist.")
@@ -477,33 +492,6 @@ def seq_master_lengths(fasta_file, root_directory):
     plt.xticks(rotation=45, ha='right')
     plt.tight_layout()
     plt.savefig(os.path.join(root_directory, "sequence_lengths.png"), dpi=600)
-
-##################################################################################################################################
-
-def analyze_nucleotide_freqs(fasta_file, root_directory):
-
-    sequences = list(SeqIO.parse(fasta_file, "fasta"))
-
-    total_sequence = "".join(str(seq_record.seq) for seq_record in sequences)
-
-    # Calculate nucleotide frequencies for the entire fasta file
-    nucleotide_freq = {
-        'A': total_sequence.count('A'),
-        'T': total_sequence.count('T'),
-        'C': total_sequence.count('C'),
-        'G': total_sequence.count('G')
-    }
-
-    # Define colors for each nucleotide
-    colors = ['blue', 'orange', 'green', 'red']
-
-    # Plot nucleotide frequencies with colored bars
-    plt.figure(figsize=(8, 6))
-    bars = plt.bar(nucleotide_freq.keys(), nucleotide_freq.values(), color=colors)
-    plt.xlabel('Nucleotides')
-    plt.ylabel('Frequency')
-    plt.title('Overall Nucleotide Frequencies')
-    plt.tight_layout()
 
     total_count = sum(nucleotide_freq.values())
     print("Overall Nucleotide Frequencies:")
