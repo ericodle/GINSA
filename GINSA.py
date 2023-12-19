@@ -71,7 +71,7 @@ def create_folders(occurrence_ids, proj_dir):
 
 def generate_csv(occurrence_ids, proj_dir):
     with open(proj_dir + '/occurrences.csv', mode='w', newline='', encoding='utf-8') as csv_file:
-        fieldnames = ['occurrence_id', 'country', 'latitude', 'longitude', 'prefix_text']
+        fieldnames = ['occurrence_id', 'country', 'latitude', 'longitude', 'ENA_index']
         writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
 
         writer.writeheader()
@@ -83,25 +83,27 @@ def generate_csv(occurrence_ids, proj_dir):
             if response.status_code == 200:
                 try:
                     data = response.json()
-                    long_id = data.get("occurrenceID")
-                    if long_id:
-                        country = data.get("countryCode")
-                        latitude = data.get("decimalLatitude")
-                        longitude = data.get("decimalLongitude")
-                        underscore_index = long_id.find("_")
-                        if underscore_index != -1:
-                            prefix_text = long_id[:underscore_index]
-                        else:
-                            prefix_text = "N/A"
-                        writer.writerow({
-                            'occurrence_id': occurrence_id,
-                            'country': country,
-                            'latitude': latitude,
-                            'longitude': longitude,
-                            'prefix_text': prefix_text
-                        })
-                    else:
-                        print(f"occurrenceID not found for occurrence {occurrence_id}. Skipping.")
+                    occurrence_id = data.get("gbifID")
+                    latitude = data.get("decimalLatitude")
+                    longitude = data.get("decimalLongitude")
+                    ENA_index = data.get("identifier")
+                    
+                    # Remove commas from the country name
+                    country = data.get("country").replace(',', '') if data.get("country") else None
+                    
+                    # Extract text to the left of the first underscore in ENA_index
+                    if ENA_index is not None:
+                        underscore_index = ENA_index.find('_')
+                        ENA_index = ENA_index[:underscore_index] if underscore_index != -1 else ENA_index
+                    
+                    # Write data to the CSV file
+                    writer.writerow({
+                        'occurrence_id': occurrence_id,
+                        'country': country,
+                        'latitude': latitude,
+                        'longitude': longitude,
+                        'ENA_index': ENA_index
+                    })
 
                 except ValueError:
                     print(f"Failed to parse JSON for occurrence {occurrence_id}.")
@@ -127,6 +129,21 @@ def process_directory(proj_dir):
 
 ###############################################################################################################################
 
+def is_valid_url(url):
+    try:
+        response = requests.head(url)
+        response.raise_for_status()  # Raise an exception for HTTP errors
+        return True
+    except HTTPError as http_err:
+        if response.status_code == 404:
+            return False
+
+    except Exception as err:
+        print(f"An error occurred while checking the URL {url}: {err}")
+        return False
+
+###############################################################################################################################
+
 def ssu_fasta_grab(csv_file, proj_dir):
     # Load the CSV file into a DataFrame
     df = pd.read_csv(csv_file)
@@ -135,23 +152,24 @@ def ssu_fasta_grab(csv_file, proj_dir):
     api_base_url = "https://www.ebi.ac.uk/metagenomics/api/v1"
 
     # Iterate through the DataFrame and process each occurrence
-    for prefix_text, occurrence_id in zip(df['prefix_text'], df['occurrence_id']):
-        if pd.isna(prefix_text):  # Check if prefix_text is NaN
+    for ENA_index, occurrence_id in zip(df['ENA_index'], df['occurrence_id']):
+        if pd.isna(ENA_index):  # Check if ENA_index is NaN
             print(f"ENA link not found in occurrence metadata for ID {occurrence_id}.")
             continue  # Continue to the next iteration
 
-        if "MGY" not in prefix_text.upper():  # Confirm prefix text points to EMBL ENA
-            print(f"ENA link not found in occurrence metadata for ID {occurrence_id}.")
-            continue  # Continue to the next iteration
+        url = f"{api_base_url}/analyses/{ENA_index}/downloads"
 
-        url = f"{api_base_url}/analyses/{prefix_text}/downloads"
-        
+        # Check if the URL is valid
+        if not is_valid_url(url):
+            print(f"Skipping processing for invalid URL: {url}")
+            continue
+
         try:
             response = requests.get(url)
             response.raise_for_status()  # Raise an exception for HTTP errors
             data = response.json()
 
-            print(f"Processing {prefix_text}...")
+            print(f"Processing {ENA_index}...")
 
             # Create a directory with the occurrence_id in the project directory
             subdir_path = os.path.join(proj_dir, str(occurrence_id))
@@ -166,14 +184,14 @@ def ssu_fasta_grab(csv_file, proj_dir):
                     fasta_links.append(link_entry)
 
             if fasta_links:
-                print(f"Downloading {len(fasta_links)} file(s) for {prefix_text}...")
+                print(f"Downloading {len(fasta_links)} file(s) for {ENA_index}...")
                 for fasta_link in fasta_links:
                     file_name = os.path.basename(fasta_link)
                     file_path = os.path.join(subdir_path, file_name)
                     wget.download(fasta_link, file_path)
                 print(" Download complete.")
             else:
-                print(f"No fasta files found for {prefix_text}. Saving 'no_fasta.txt'...")
+                print(f"No fasta files found for {ENA_index}. Saving 'no_fasta.txt'...")
                 no_fasta_file = os.path.join(subdir_path, "no_fasta.txt")
                 with open(no_fasta_file, "w") as f:
                     f.write("No fasta files found.")
@@ -196,23 +214,23 @@ def mapseq_grab(csv_file, proj_dir):
     api_base_url = "https://www.ebi.ac.uk/metagenomics/api/v1"
 
     # Iterate through the DataFrame and process each occurrence
-    for prefix_text, occurrence_id in zip(df['prefix_text'], df['occurrence_id']):
-        if pd.isna(prefix_text):  # Check if prefix_text is NaN
+    for ENA_index, occurrence_id in zip(df['ENA_index'], df['occurrence_id']):
+        if pd.isna(ENA_index):  # Check if ENA_index is NaN
             print(f"ENA link not found in occurrence metadata for ID {occurrence_id}.")
             continue  # Continue to the next iteration
 
-        if "MGY" not in prefix_text.upper():  # Confirm prefix text points to EMBL ENA
+        if "MGY" not in ENA_index.upper():  # Confirm prefix text points to EMBL ENA
             print(f"ENA link not found in occurrence metadata for ID {occurrence_id}.")
             continue  # Continue to the next iteration
 
-        url = f"{api_base_url}/analyses/{prefix_text}/downloads"
+        url = f"{api_base_url}/analyses/{ENA_index}/downloads"
         
         try:
             response = requests.get(url)
             response.raise_for_status()  # Raise an exception for HTTP errors
             data = response.json()
 
-            print(f"Processing {prefix_text}...")
+            print(f"Processing {ENA_index}...")
 
             # Create a directory with the occurrence_id in the project directory
             subdir_path = os.path.join(proj_dir, str(occurrence_id))
