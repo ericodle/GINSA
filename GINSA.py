@@ -586,7 +586,7 @@ def main():
     print("Checking sub-folders for new sequences.")
     check_dir(proj_dir)
 
-    print("Aggregaring sequences into a master csv file.")
+    print("Aggregating sequences into a master csv file.")
     fasta_path = combine_csv_files(proj_dir)
 
     print("Generating a master FASTA file containing your new sequences.")
