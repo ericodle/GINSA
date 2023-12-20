@@ -425,7 +425,7 @@ def check_dir(proj_dir):
     num_not_have_csv = presence_data.count(False)
 
     plt.figure(figsize=(6, 6))
-    plt.bar(['Sequences Found', 'Sequences Not Found'], [num_have_csv, num_not_have_csv], color=['green', 'red'])
+    plt.bar(['With FASTA', 'Without FASTA'], [num_have_csv, num_not_have_csv], color=['green', 'red'])
     #plt.xlabel('Project Sub-Folders')
     plt.ylabel('Number of Sub-folders')
     plt.title('Sub-folders Containing Sequences')
