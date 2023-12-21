@@ -22,23 +22,24 @@ Users input their species of interest, then GINSA gathers data on each GBIF occu
 Data includes the GBIF occurrence ID, latitude/longitude, and country of origin -- all saved to a CSV spreadsheet.
 GINSA downloads SSU rDNA sequences from each occurrence, combining them into a single FASTA file.
 
-We tested GINSA on <i>Lecudina longissima</i> (26 occurrences), <i>Tetraselmis marina</i> (188 occurrences), <i>Lecudina tuzetae</i> (309 occurrences), <i>Labyrinthula</i> (2,603 occurrences) and more to come.
+We tested GINSA on multiple taxa across the Tree of Life.
 
-GINSA is a unique tool utilizing the GBIF interface. In the spirit of GBIF, the code for GINSA is openly available, and we encourage community input and collaboration. There are links below to report a bug or request a new feature.
-Moreover, we invite everyone interested to follow along with the instructions provided below.</p>
+GINSA is a unique tool utilizing the GBIF interface. In the spirit of GBIF, the code for GINSA is openly available, and we encourage community collaboration. Feel free to fork.
+
+Beginners, please follow along with the instructions provided below.</p>
   
 [GINSA Overview Video](https://www.youtube.com/watch?v=PrWM5vmqYO8)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
-# OPTION 1: Quick start using the GINSA Jupyter Notebook
+# OPTION 1: Quick start using the GINSA Jupyter notebook
 
-Watch our instructional video for a guided walkthrough of how to use the Jupyter Notebook. 
+Watch our instructional video for a guided walkthrough of how to use the Jupyter notebook. 
 
 [Walkthrough Video](https://youtu.be/qN3aNbaY8qQ)
 
-To use the Jupyter Notebook version of GINSA, click [GINSA.ipynb](https://github.com/ericodle/GINSA/blob/main/GINSA.ipynb) and then click the "Open in Colab" button at the top left.
+To use the Jupyter notebook version of GINSA, click [GINSA.ipynb](https://github.com/ericodle/GINSA/blob/main/GINSA.ipynb) and then click the "Open in Colab" button at the top left.
 
 
 # OPTION 2: Run locally using GINSA.py
@@ -57,7 +58,7 @@ Once the repository is cloned successfully, you can navigate to your clone folde
 
 ### Install dependencies using pip
 Whether you downloaded GINSA.py or cloned the repository, you will need Python installed on your computer. GINSA was tested on Python3.
-Once Python is installed, you will need to copy-paste these commands into your command prompt (terminal).
+Once Python3 is installed, you will need to copy-paste these commands into your command prompt (terminal).
 
   ```sh
   # Install required packages for GINSA using pip.
@@ -66,7 +67,7 @@ Once Python is installed, you will need to copy-paste these commands into your c
   pip install biopython
   ```
 
-Next, create an empty folder (directory) and take note of its full folder path (should look something like "/home/researcher/Desktop/project_directory"). Importantly, be sure to not include spaces in your project directory name. While the actual amount of required space will depend on the number of occurrences available for the species you search, ensure you have at least 100 GB of available storage. You will be downloading a lot of large FASTA files. Lecudina longissima has 26 occurrences and took 15 minutes, while Lecudina tuzetae has 309 occurrences and took 1 hour to complete. Labyrinthula has around 2,000 occurrences and took about 8 hours. 
+Next, create an empty folder (directory) and take note of its full folder path (should look something like "/home/researcher/Desktop/project_directory"). Importantly, be sure to not include spaces in your project directory name. While the actual amount of required space will depend on the number of occurrences available for the species you search, ensure you have at least 100 GB of available storage. You will be downloading a lot of large FASTA files. Lecudina longissima has 26 occurrences and took 15 minutes, while Labyrinthula has around 2,000 occurrences and took about 8 hours. See the full paper for more details.
 
 ### Run program
 
@@ -96,7 +97,7 @@ Here, you can search either the full genus + species name, as in "Lecudina longi
 'Enter your target genus and species (e.g. Lecudina longissima):'  Lecudina longissima
 ```
 
-GINSA will respond with confirmation details:
+Confirmation statements should follow:
 
 ```sh
 'Genus:  Lecudina'
@@ -105,11 +106,11 @@ GINSA will respond with confirmation details:
 ```
 
 GINSA will then proceed with the analysis, informing you of each step being performed in real time.
-Note: Analysis time depends on internet connection speed and the number of occurrences in GBIF.
+Note: Analysis time depends on internet connection speed and number of occurrences.
 
 ## Completion of Analysis
 
-When GINSA completes its process, you will find that your project folder now contains a unique sub-folder for each occurrence found, as well as several output files. <br />
+When GINSA completes its process, you will find that your project folder now contains a unique sub-folder for each occurrence, as well as several output files. <br />
 
 Below is a description of each output file, using the search term "Lecudina longissima" as an example.
 
@@ -135,7 +136,7 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/occurrences.csv" alt="occurrences.csv" width="350" height="350">
 
-  This file is a basic spreadsheet that can be opened in Excel or any other CSV reader. Data column 1 contains the GBIF occurrence IDs found during the taxon search, while data column 2 contains the country code from which the sample was taken. Data columns 3 and 4 contain latitude and longitude coordinates for each occurrence. Finally, data column 5, labeled "prefix_text", contains the EMBL ENA project title sifted from the GBIF API for each occurrence. "prefix_text" can be replaced into the EMBL API link, leading GINSA to the download page for each SSU FASTA and MAPSeq file.
+  This file is a basic spreadsheet that can be opened in Excel or any other CSV reader. Data column 1 contains the GBIF occurrence IDs found during the taxon search, while data column 2 contains the country code from which the sample was taken. Data columns 3 and 4 contain latitude and longitude coordinates for each occurrence. Finally, data column 5, labeled "prefix_text", contains the EMBL ENA project title sifted from the GBIF API for each occurrence. "prefix_text" can be replaced into the ENA API link, leading GINSA to the download page for each SSU FASTA and MAPSeq file.
 
 
 - [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/seq_master.fasta" alt="seq_master.fasta" width="350" height="350">
@@ -152,7 +153,7 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] ssu_fasta_grab()
 
-  This function makes API calls to EMBL's metagenomic data repository, ENA, and replaced the stored variable "prefix_text" for each occurrence into the EMBL URL. Then, the function searches JSON tags on the terminal sites to find and download all FASTA files containing SSU contigs. 
+  This function makes API calls to EMBL's metagenomic data repository, ENA, and replaced the stored variable "ENA_index" for each occurrence into the EMBL URL. Then, the function searches JSON tags on the terminal site to find and download all FASTA files containing SSU contigs. 
 
 - [ ] mapseq_grab()
 
@@ -176,9 +177,8 @@ Below is a description of each output file, using the search term "Lecudina long
 
 Our research paper provides a comprehensive overview of the methodology, results, and insights derived from this repository. You can access the full paper when available.
 
-If you find our research and code useful in your work, we kindly request that you cite our associated research paper in your publications. You can find the paper through the following citation:
+If you find our research and code useful in your work, we kindly request that you cite our associated research paper in your publications. Please use the following citation:
 
-*Manuscript being drafted
 
 
 <!-- LICENSE -->
