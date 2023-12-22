@@ -116,7 +116,7 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] sifting_results.png
 
-  This image plots a simple histogram showing how many occurrence sub-folders actually contain FASTA and MAPSeq files. Some occurrences in GBIF draw from data types other than next-gen sequences, such as human observation or Sanger sequencing. In the future, we may expand the scope of GINSA to grab Sanger SSU sequences from other online databases as such as the European Nucleotide Archive (ENA), the National Center for Biotechnology Information (NCBI), the DNA Data Bank of Japan (DDBJ), and SILVA (Latin for 'forest').
+  This image plots a simple histogram showing how many occurrence sub-folders actually contain FASTA and MAPseq files. Some occurrences in GBIF draw from data types other than next-gen sequences, such as human observation or Sanger sequencing. In the future, we may expand the scope of GINSA to grab Sanger SSU sequences from other online databases as such as the European Nucleotide Archive (ENA), the National Center for Biotechnology Information (NCBI), the DNA Data Bank of Japan (DDBJ), and SILVA (Latin for 'forest').
 
   <img src="https://github.com/ericodle/GINSA/blob/main/example_images/sifting_results.png" alt="seq_master.fasta" width="350" height="350">
 
@@ -136,7 +136,7 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/occurrences.csv" alt="occurrences.csv" width="350" height="350">
 
-  This file is a basic spreadsheet that can be opened in Excel or any other CSV reader. Data column 1 contains the GBIF occurrence IDs found during the taxon search, while data column 2 contains the country code from which the sample was taken. Data columns 3 and 4 contain latitude and longitude coordinates for each occurrence. Finally, data column 5, labeled "prefix_text", contains the EMBL ENA project title sifted from the GBIF API for each occurrence. "prefix_text" can be replaced into the ENA API link, leading GINSA to the download page for each SSU FASTA and MAPSeq file.
+  This file is a basic spreadsheet that can be opened in Excel or any other CSV reader. Data column 1 contains the GBIF occurrence IDs found during the taxon search, while data column 2 contains the country code from which the sample was taken. Data columns 3 and 4 contain latitude and longitude coordinates for each occurrence. Finally, data column 5, labeled "prefix_text", contains the EMBL ENA project title sifted from the GBIF API for each occurrence. "prefix_text" can be replaced into the ENA API link, leading GINSA to the download page for each SSU FASTA and MAPseq file.
 
 
 - [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/seq_master.fasta" alt="seq_master.fasta" width="350" height="350">
@@ -157,15 +157,15 @@ Below is a description of each output file, using the search term "Lecudina long
 
 - [ ] mapseq_grab()
 
-  This function performs the same actions as ssu_fasta_grab but targets associated MAPSeq files rather than FASTA files.
+  This function performs the same actions as ssu_fasta_grab but targets associated MAPseq files rather than FASTA files.
 
 - [ ] find_target_in_mapseq()
 
-  This function opens the MAPSeq file for each occurrence sub-directory and searches for sequence labels corresponding to the target species. For example, if you searched "Lecudina longissima",  find_target_in_mapseq will search the MAPSeq file for all sequence labels containing the strings "Lecudina" and "longissima. If only a single taxon string is provided, such as for the genus-level search "Labyrinthula", then all sequence labels containing "Labyrinthula" will be stored in a list for downstream reference.
+  This function opens the MAPseq file for each occurrence sub-directory and searches for sequence labels corresponding to the target species. For example, if you searched "Lecudina longissima",  find_target_in_mapseq will search the MAPseq file for all sequence labels containing the strings "Lecudina" and "longissima. If only a single taxon string is provided, such as for the genus-level search "Labyrinthula", then all sequence labels containing "Labyrinthula" will be stored in a list for downstream reference.
 
 - [ ] sift_fasta()
 
-  This function is complementary to find_target_in_mapseq, and utilizes the sequence label list generated previously to extract each SSU sequence contained in the (often very large) FASTA files grabbed from EMBL. The SSU contig FASTA files provided do not contain the names of the taxa they identify, hence the need for the MAPSeq file.
+  This function is complementary to find_target_in_mapseq, and utilizes the sequence label list generated previously to extract each SSU sequence contained in the (often very large) FASTA files grabbed from EMBL. The SSU contig FASTA files provided do not contain the names of the taxa they identify, hence the need for the MAPseq file.
 
 - [ ] combine_csv_files()
 
