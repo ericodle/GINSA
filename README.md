@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="https://github.com/ericodle/GINSA/blob/main/example_images/logo3.jpg" alt="Logo" width="600" height="300">
+    <img src="https://github.com/ericodle/GINSA/blob/main/docs/logo3.jpg" alt="Logo" width="600" height="300">
   
   </a>
 
@@ -118,28 +118,28 @@ Below is a description of each output file, using the search term "Lecudina long
 
   This image plots a simple histogram showing how many occurrence sub-folders actually contain FASTA and MAPseq files. Some occurrences in GBIF draw from data types other than next-gen sequences, such as human observation or Sanger sequencing. In the future, we may expand the scope of GINSA to grab Sanger SSU sequences from other online databases as such as the European Nucleotide Archive (ENA), the National Center for Biotechnology Information (NCBI), the DNA Data Bank of Japan (DDBJ), and SILVA (Latin for 'forest').
 
-  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/sifting_results.png" alt="seq_master.fasta" width="350" height="350">
+  <img src="https://github.com/ericodle/GINSA/blob/main/docs/sifting_results.png" alt="seq_master.fasta" width="350" height="350">
 
 - [ ] sequence_lengths.png
 
   This image visualizes the length of each sequence in the seq_master.fasta file. While the average length is around 200 bp, variability in length can be quite broad.
 
-  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/sequence_lengths.png" alt="seq_master.fasta" width="450" height="270">
+  <img src="https://github.com/ericodle/GINSA/blob/main/docs/sequence_lengths.png" alt="seq_master.fasta" width="450" height="270">
 
 
 - [ ] nucleotide_frequencies.png
 
   This image plots the proportion of each nucleotide, A, T, C, and G, as a frequency histogram. Nucleotide proportions serve as an additional quality check on the extracted sequences.
 
-  <img src="https://github.com/ericodle/GINSA/blob/main/example_images/nucleotide_frequencies.png" alt="seq_master.fasta" width="320" height="240">
+  <img src="https://github.com/ericodle/GINSA/blob/main/docs/nucleotide_frequencies.png" alt="seq_master.fasta" width="320" height="240">
   
 
-- [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/occurrences.csv" alt="occurrences.csv" width="350" height="350">
+- [ ] <img src="https://github.com/ericodle/GINSA/blob/main/docs/occurrences.csv" alt="occurrences.csv" width="350" height="350">
 
   This file is a basic spreadsheet that can be opened in Excel or any other CSV reader. Data column 1 contains the GBIF occurrence IDs found during the taxon search, while data column 2 contains the country code from which the sample was taken. Data columns 3 and 4 contain latitude and longitude coordinates for each occurrence. Finally, data column 5, labeled "prefix_text", contains the EMBL ENA project title sifted from the GBIF API for each occurrence. "prefix_text" can be replaced into the ENA API link, leading GINSA to the download page for each SSU FASTA and MAPseq file.
 
 
-- [ ] <img src="https://github.com/ericodle/GINSA/blob/main/example_images/seq_master.fasta" alt="seq_master.fasta" width="350" height="350">
+- [ ] <img src="https://github.com/ericodle/GINSA/blob/main/docs/seq_master.fasta" alt="seq_master.fasta" width="350" height="350">
 
   This file is the primary output of GINSA -- a FASTA file containing all the gathered SSU sequences for all occurrences of a species on GBIF. From this FASTA file, researchers can perform downstream phylogenetic analysis and modify the sequence labels with occurrence metadata from occurrences.csv to explore biogeographic patterns. The supplemental script <img src="https://github.com/ericodle/GINSA/blob/main/SUFFIX_ADDER.py" alt="SUFFIX_ADDER.py" width="350" height="350"> is included as a tool to add the country code to the end of each sequence name. Moreover, users are encouraged to play with the code and modify it to their particular research needs.
 
