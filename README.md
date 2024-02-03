@@ -38,6 +38,23 @@ GINSA was developed using the Python(3) programming language.
 Installing Python3 is therefore required to run GINSA.
 Python3 can be downloaded here: https://www.python.org/downloads/
 
+## For Mac users
+Newer versions of Python lack certain SSL (secure sockets layer) certificates on MacOS.
+To correct this, perform the following steps in your working environment:
+### Step 1: Install certifi
+  ```sh
+  python3 -m pip install --upgrade pip 
+  pip install --upgrade certifi
+  ```
+### Step 2: Configure system SSL certificates
+Find the path to your Python distribution's Certificates.command, then enter the following command.
+Our system used Python 3.12, therefore the command looked like this:
+  ```sh
+  sudo /Applications/Python\ 3.12/Install\ Certificates.command
+  ```
+Enter your password to make the changes.
+Your system should now have the required SSL certificates to run GINSA.
+
 ## Install GINSA
 pyPI pip install somethingsomething
 
