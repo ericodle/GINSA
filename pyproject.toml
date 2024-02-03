@@ -11,7 +11,7 @@ authors = [
 description = "Python package that exploits GBIF's biogeographic data and sequence links"
 readme = "README.md"
 keywords = ["Biodiversity", "ENA", "Biogeography", "Environmental Sequencing", "GBIF", "Data Accumulator]
-requires-python = ">=3.8"
+requires-python = ">= 3.8"
 classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Operating System :: OS Independent"]
 
 [project.urls]
