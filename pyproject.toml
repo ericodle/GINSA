@@ -1,16 +1,20 @@
 [build-system]
-requires = ["flit_core>=3.4"]
-build-backend = "flit_core.buildapi"
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
 
 [project]
 name = "ginsa"
-version = "1.1.0"
-authors = [
-  { name="Eric Odle", email="odle.eric1@gmail.com" },
-]
+version = "2024.02.04"
+authors = [{ name="Eric Odle", email="odle.eric1@gmail.com" }]
 description = "Python package that exploits GBIF's biogeographic data and sequence links"
 readme = "README.md"
-keywords = ["Biodiversity", "ENA", "Biogeography", "Environmental Sequencing", "GBIF", "Data Accumulator]
+keywords = ["Biodiversity", "ENA", "Biogeography", "Environmental Sequencing", "GBIF", "Data Accumulator"]
+dependencies = [
+  "httpx",
+  "gidgethub[httpx]>4.0.0",
+  "django>2.1; os_name != 'nt'",
+  "django>2.0; os_name == 'nt'",
+]
 requires-python = ">= 3.8"
 classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Operating System :: OS Independent"]
 
