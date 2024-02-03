@@ -43,7 +43,7 @@ pyPI pip install somethingsomething
 
 # Quick Start
 
-## Option 1: Run GINSA by graphical User Interface (GUI)
+## Option 1: Run GINSA by graphical user interface (GUI)
 
 This is the point-and-click method of interfacing with software with which most users are familiar.
 
@@ -67,14 +67,6 @@ Open up a command line prompt (terminal) and execute the following command:
 # Run the Python script titled GINSA.py
 python3 path_to_your_file/GINSA.py
 ```
-
-## Option 3: Run GINSA in the provided Jupyter Notebook
-
-Watch our instructional video for a guided walkthrough of how to use the Jupyter notebook. 
-
-[Walkthrough Video](https://youtu.be/qN3aNbaY8qQ)
-
-To use the Jupyter notebook version of GINSA, click [GINSA.ipynb](https://github.com/ericodle/GINSA/blob/main/GINSA.ipynb) and then click the "Open in Colab" button at the top left.
 
 
 # Description of features
