@@ -9,6 +9,7 @@ setup(
         'console_scripts': [
             'GINSA_cli = ginsa.GINSA_cli:main',
             'GINSA_gui = ginsa.GINSA_gui:main',
+            'suffix_adder = ginsa.suffix_adder:main',
         ],
     },
     
