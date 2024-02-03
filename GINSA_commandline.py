@@ -16,11 +16,11 @@ class GINSAClass:
 ###############################################################################################################################
     def __init__(self, proj_dir=None, species_name=None):
         """
-        Initialize the GINSAClass instance.
+        Initialize GINSAClass instance.
 
         Parameters:
-        - proj_dir (str): Path to the project directory.
-        - species_name (str): Name of the species for analysis.
+        - proj_dir (str): Path to project directory.
+        - species_name (str): Name of species for analysis.
         """
         if proj_dir is not None and species_name is not None:
             self.proj_dir = proj_dir
@@ -49,7 +49,7 @@ class GINSAClass:
 
         Parameters:
         - species_name (str): Name of the species for which occurrences are searched.
-        - limit (int): Maximum number of occurrences to retrieve.
+        - limit (int): Maximum number of occurrences to retrieve per API call.
 
         Returns:
         - occurrence_ids (list): List of occurrence IDs.
@@ -58,10 +58,10 @@ class GINSAClass:
         base_species_url = "https://api.gbif.org/v1/species/match"
         base_occurrence_url = "https://api.gbif.org/v1/occurrence/search"
 
-        # Step 1: Use species match service to get taxonKey
+        # Step 1: Use species match to get taxonKey
         species_params = {
             "name": species_name,
-            "strict": False,  # Adjust strictness based on your needs
+            "strict": False,
         }
 
         try:
@@ -101,7 +101,7 @@ class GINSAClass:
                     occurrence_ids.extend([occurrence["key"] for occurrence in occurrence_json["results"]])
 
                     if len(occurrence_json["results"]) < limit:
-                        break  # Reached the end of results
+                        break
                     else:
                         offset += limit
                 else:
@@ -132,7 +132,7 @@ class GINSAClass:
 ###############################################################################################################################
     def generate_csv(self, occurrence_ids, occurrences, proj_dir):
         """
-        Generate a CSV file containing occurrence information.
+        Generate a CSV file containing occurrence details.
 
         Parameters:
         - occurrence_ids (list): List of occurrence IDs.
@@ -155,7 +155,7 @@ class GINSAClass:
                 return
 
             for occurrence_id in occurrence_ids:
-                # Find the occurrence with the matching key
+                # Find occurrence with matching key
                 occurrence_info = next((occurrence for occurrence in occurrences_list if isinstance(occurrence, dict) and occurrence.get("key") == occurrence_id), None)
 
                 if occurrence_info:
@@ -164,7 +164,7 @@ class GINSAClass:
                         latitude = occurrence_info.get("decimalLatitude")
                         longitude = occurrence_info.get("decimalLongitude")
                         ENA_index = occurrence_info.get("identifier")
-                        event_date = occurrence_info.get("eventDate", "")  # Extract eventDate
+                        event_date = occurrence_info.get("eventDate", "")
 
                         country = occurrence_info.get("country", "").replace(',', '') if occurrence_info.get("country") else None
 
@@ -178,7 +178,7 @@ class GINSAClass:
                             'latitude': latitude,
                             'longitude': longitude,
                             'ENA_index': ENA_index,
-                            'eventDate': event_date  # Include eventDate in the CSV
+                            'eventDate': event_date
                         })
 
                     except ValueError:
@@ -211,17 +211,17 @@ class GINSAClass:
 ###############################################################################################################################
     def is_valid_url(self, url):
         """
-        Check if a URL is valid.
+        Check if URL is valid.
 
         Parameters:
-        - url (str): The URL to check.
+        - url (str): URL to check.
 
         Returns:
-        - bool: True if the URL is valid, False otherwise.
+        - bool: True if URL is valid, otherwise False.
         """
         try:
             response = requests.head(url)
-            response.raise_for_status()  # Raise an exception for HTTP errors
+            response.raise_for_status()
             return True
         except HTTPError as http_err:
             if response.status_code == 404:
@@ -240,33 +240,33 @@ class GINSAClass:
         - csv_file (str): Path to the CSV file containing occurrence metadata.
         - proj_dir (str): Path to the project directory.
         """
-        # Load the CSV file into a DataFrame
+        # Load CSV file into a Pandas DataFrame
         df = pd.read_csv(csv_file)
 
-        # Replace with your actual ENA API endpoint
+        # Replace with ENA API endpoint
         api_base_url = "https://www.ebi.ac.uk/metagenomics/api/v1"
 
         # Iterate through the DataFrame and process each occurrence
         for ENA_index, occurrence_id in zip(df['ENA_index'], df['occurrence_id']):
             if pd.isna(ENA_index):  # Check if ENA_index is NaN
                 print(f"ENA link not found in occurrence metadata for ID {occurrence_id}.")
-                continue  # Continue to the next iteration
+                continue
 
             url = f"{api_base_url}/analyses/{ENA_index}/downloads"
 
-            # Check if the URL is valid
+            # Check if URL is valid
             if not self.is_valid_url(url):
                 print(f"Skipping processing for invalid URL: {url}")
                 continue
 
             try:
                 response = requests.get(url)
-                response.raise_for_status()  # Raise an exception for HTTP errors
+                response.raise_for_status()
                 data = response.json()
 
                 print(f"Processing {ENA_index}...")
 
-                # Create a directory with the occurrence_id in the project directory
+                # Create a directory named occurrence_id in project directory
                 subdir_path = os.path.join(proj_dir, str(occurrence_id))
                 if not os.path.exists(subdir_path):
                     os.makedirs(subdir_path)
@@ -308,32 +308,32 @@ class GINSAClass:
         - csv_file (str): Path to the CSV file containing occurrence metadata.
         - proj_dir (str): Path to the project directory.
         """
-        # Load the CSV file into a DataFrame
+        # Load the CSV file into a Pandas DataFrame
         df = pd.read_csv(csv_file)
 
-        # Replace with your actual ENA API endpoint
+        # Replace with ENA API endpoint
         api_base_url = "https://www.ebi.ac.uk/metagenomics/api/v1"
 
         # Iterate through the DataFrame and process each occurrence
         for ENA_index, occurrence_id in zip(df['ENA_index'], df['occurrence_id']):
             if pd.isna(ENA_index):  # Check if ENA_index is NaN
                 print(f"ENA link not found in occurrence metadata for ID {occurrence_id}.")
-                continue  # Continue to the next iteration
+                continue 
 
             if "MGY" not in ENA_index.upper():  # Confirm prefix text points to EMBL ENA
                 print(f"ENA link not found in occurrence metadata for ID {occurrence_id}.")
-                continue  # Continue to the next iteration
+                continue 
 
             url = f"{api_base_url}/analyses/{ENA_index}/downloads"
             
             try:
                 response = requests.get(url)
-                response.raise_for_status()  # Raise an exception for HTTP errors
+                response.raise_for_status()
                 data = response.json()
 
                 print(f"Processing {ENA_index}...")
 
-                # Create a directory with the occurrence_id in the project directory
+                # Create a directory named occurrence_id in project directory if not already present.
                 subdir_path = os.path.join(proj_dir, str(occurrence_id))
                 if not os.path.exists(subdir_path):
                     os.makedirs(subdir_path)
@@ -343,7 +343,7 @@ class GINSAClass:
                 # Check if 'data' key is present in the response dictionary
                 if 'data' not in data:
                     print("Error: 'data' key not present in the API response.")
-                    continue  # Continue to the next iteration
+                    continue
 
                 # Loop through the data to find links ending with "SSU_MAPSeq.mseq.gz"
                 for entry in data['data']:
@@ -379,14 +379,14 @@ class GINSAClass:
 
         Parameters:
         - subdirectory (str): Path to the subdirectory containing MAPSeq files.
-        - file_path (str): Path to the MAPSeq file.
-        - genus (str): Genus of the species for filtering.
-        - species (str): Species for filtering.
+        - file_path (str): Path to MAPSeq file.
+        - genus (str): Genus of target species.
+        - species (str): Target species.
 
         Returns:
         - truncated_strings (list): List of truncated strings.
         """
-        truncated_strings = []  # List to store truncated strings
+        truncated_strings = []
 
         try:
             with open(file_path, 'r') as file:
@@ -395,12 +395,12 @@ class GINSAClass:
                 for line in content:
                     line = line.strip()
                     if genus in line and species in line:
-                        # Find the index of the search word in the line
+                        # Find index of the search word in line
                         word_index = line.index(species)
 
                         # Extract the preceding string
                         preceding_string = line[:word_index].strip()
-                        # Truncate to only the text before the first space
+                        # Truncate to text before the first space
                         truncated_string = preceding_string.split()[0]
                         truncated_strings.append(truncated_string)
 
@@ -419,7 +419,7 @@ class GINSAClass:
         Extract DNA sequences from a FASTA file based on truncated strings.
 
         Parameters:
-        - fasta_file_path (str): Path to the FASTA file.
+        - fasta_file_path (str): Path to FASTA file.
         - truncated_strings_path (str): Path to the file containing truncated strings.
 
         Returns:
@@ -436,7 +436,7 @@ class GINSAClass:
                 print("Truncated strings file not found. Continuing without filtering.")
                 lines = []
 
-        # Parse the FASTA file and extract sequences
+        # Parse FASTA file and extract sequences
         with open(fasta_file_path, "rt") as fasta_file:
             records = SeqIO.parse(fasta_file, "fasta")
             for record in records:
@@ -475,8 +475,8 @@ class GINSAClass:
 
         Parameters:
         - proj_dir (str): Path to the project directory.
-        - genus (str): Genus of the species for filtering.
-        - species (str): Species for filtering.
+        - genus (str): Genus of target species.
+        - species (str): Target species.
         """
         # Iterate through subdirectories in proj_dir
         for subdirectory in os.listdir(proj_dir):
@@ -520,14 +520,14 @@ class GINSAClass:
 
             fasta_files = [file_name for file_name in os.listdir(subdir_path) if file_name.endswith("SSU.fasta")]
 
-            # Check if any FASTA files are found in the subdirectory
+            # Check if FASTA files present in subdirectory
             if fasta_files:
                 # Iterate through FASTA files in the subdirectory
                 for fasta_file in fasta_files:
                     fasta_filepath = os.path.join(subdir_path, fasta_file)
                     print("Found FASTA file:", fasta_filepath)
 
-                    # Construct the path for the truncated strings file
+                    # Construct path for truncated string file
                     truncated_strings_filepath = os.path.join(subdir_path, "truncated_strings.txt")
 
                     # Perform analysis using sift_fasta and save_sifted_data_to_csv functions
@@ -552,7 +552,7 @@ class GINSAClass:
         - subdirectory_path (str): Path to the subdirectory.
 
         Returns:
-        - bool: True if CSV files exist, False otherwise.
+        - bool: True if CSV files exist, otherwise False.
         """
         csv_files = [file for file in os.listdir(subdirectory_path) if file.endswith('.csv')]
         return len(csv_files) > 0
@@ -577,7 +577,7 @@ class GINSAClass:
 
         plt.figure(figsize=(6, 6))
         plt.bar(['With FASTA', 'Without FASTA'], [num_have_csv, num_not_have_csv], color=['green', 'red'])
-        #plt.xlabel('Project Sub-Folders')
+        #plt.xlabel('Project Sub-Folders') # Un-comment if X-axis label desired.
         plt.ylabel('Number of Sub-folders')
         plt.title('Sub-folders Containing Sequences')
         plt.tight_layout()
@@ -640,7 +640,7 @@ class GINSAClass:
         - fasta_file (str): Path to the master FASTA file.
         - proj_dir (str): Path to the project directory.
         """
-        # Check if the FASTA file exists
+        # Check if FASTA file exists
         if not os.path.exists(fasta_file):
             print(f"Error: The file '{fasta_file}' does not exist.")
             return
@@ -662,7 +662,7 @@ class GINSAClass:
             plt.xticks(rotation=45, ha='right')
             plt.tight_layout()
             
-            # Save the plot to the specified directory
+            # Save the plot to the project directory
             plt.savefig(os.path.join(proj_dir, "sequence_lengths.png"), dpi=600)
 
         except Exception as e:
@@ -671,17 +671,17 @@ class GINSAClass:
 ##################################################################################################################################
     def analyze_nucleotide_freqs(self, fasta_file, proj_dir):
         """
-        Analyze nucleotide frequencies in a FASTA file.
+        Analyze nucleotide frequencies in FASTA file.
 
         Parameters:
-        - fasta_file (str): Path to the FASTA file.
-        - proj_dir (str): Path to the project directory.
+        - fasta_file (str): Path to FASTA file.
+        - proj_dir (str): Path to project directory.
         """
         sequences = list(SeqIO.parse(fasta_file, "fasta"))
 
         total_sequence = "".join(str(seq_record.seq) for seq_record in sequences)
 
-        # Calculate nucleotide frequencies for the entire fasta file
+        # Calculate nucleotide frequencies for entire fasta file
         nucleotide_freq = {
             'A': total_sequence.count('A'),
             'T': total_sequence.count('T'),
@@ -709,14 +709,14 @@ class GINSAClass:
 ##################################################################################################################################
     def main(self):
         """
-        Main method to execute GINSA analysis.
+        Main function driving GINSA analysis.
 
         Parameters:
-        - proj_dir (str): Path to the project directory.
-        - species_name (str): Name of the species for analysis.
+        - proj_dir (str): Path to project directory.
+        - species_name (str): Name of species for analysis.
         """
         if proj_dir is not None and species_name is not None:
-            # Use proj_dir and species_name in your analysis logic
+            # Use proj_dir and species_name in analysis logic
             self.proj_dir = proj_dir
             self.species_name = species_name
             self.gen_sp = species_name.split()
