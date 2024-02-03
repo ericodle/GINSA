@@ -8,8 +8,9 @@ version = "1.1.0"
 authors = [
   { name="Eric Odle", email="odle.eric1@gmail.com" },
 ]
-description = "A small example package"
+description = "Python package that exploits GBIF's biogeographic data and sequence links"
 readme = "README.md"
+keywords = ["Biodiversity", "ENA", "Biogeography", "Environmental Sequencing", "GBIF", "Data Accumulator]
 requires-python = ">=3.8"
 classifiers = [
     "Programming Language :: Python :: 3",
