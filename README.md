@@ -32,42 +32,32 @@ Beginners, please follow along with the instructions provided below.</p>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+# Prerequisites
+## Install Python3
+GINSA was developed using the Python(3) programming language. 
+Installing Python3 is therefore required to run GINSA.
+Python3 can be downloaded here: https://www.python.org/downloads/
 
-# OPTION 1: Quick start using the GINSA Jupyter notebook
+## Install GINSA
+pyPI pip install somethingsomething
 
-Watch our instructional video for a guided walkthrough of how to use the Jupyter notebook. 
+# Quick Start
 
-[Walkthrough Video](https://youtu.be/qN3aNbaY8qQ)
+## Option 1: Run GINSA by graphical User Interface (GUI)
 
-To use the Jupyter notebook version of GINSA, click [GINSA.ipynb](https://github.com/ericodle/GINSA/blob/main/GINSA.ipynb) and then click the "Open in Colab" button at the top left.
+This is the point-and-click method of interfacing with software with which most users are familiar.
 
+## OPTION 2: Run GINSA by command line
 
-# OPTION 2: Run locally using GINSA.py
+This interface method allows more experienced users to run GINSA in a terminal emulator (command prompt, terminal, etc.) with text commands.
 
-
-In the spirit of simplicity, GINSA runs using a single file named GINSA.py.
-This file can be downloaded directly, or you can clone the repository by copy-pasting these commands into your command prompt (terminal).
+### Start the program
 
   ```sh
   # Replace "your_folderpath_here" with the actual folder where you want the project to go.
   cd /your_folderpath_here
   git clone https://github.com/ericodle/GINSA
   ```
-
-Once the repository is cloned successfully, you can navigate to your clone folder, open the "GINSA" folder contained within, and access GINSA.py.
-
-### Install dependencies using pip
-Whether you downloaded GINSA.py or cloned the repository, you will need Python installed on your computer. GINSA was tested on Python3.
-Once Python3 is installed, you will need to copy-paste these commands into your command prompt (terminal).
-
-  ```sh
-  # Install required packages for GINSA using pip.
-  pip install requests
-  pip install wget
-  pip install biopython
-  ```
-
-Next, create an empty folder (directory) and take note of its full folder path (should look something like "/home/researcher/Desktop/project_directory"). Importantly, be sure to not include spaces in your project directory name. While the actual amount of required space will depend on the number of occurrences available for the species you search, ensure you have at least 100 GB of available storage. You will be downloading a lot of large FASTA files. Lecudina longissima has 26 occurrences and took 15 minutes, while Labyrinthula has around 2,000 occurrences and took about 8 hours. See the full paper for more details.
 
 ### Run program
 
@@ -78,37 +68,16 @@ Open up a command line prompt (terminal) and execute the following command:
 python3 path_to_your_file/GINSA.py
 ```
 
-If everything went well, you will be greeted with a welcome message:
+## Option 3: Run GINSA in the provided Jupyter Notebook
 
-```sh
-Welcome to the GbIf Next-gen Sequence Accumulator! (GINSA)
-```
+Watch our instructional video for a guided walkthrough of how to use the Jupyter notebook. 
 
-Followed by a prompt asking for your project folder (directory) path:
+[Walkthrough Video](https://youtu.be/qN3aNbaY8qQ)
 
-```sh
-'Enter the path to an empty folder for this project:'  /home/researcher/Desktop/project_directory
-```
+To use the Jupyter notebook version of GINSA, click [GINSA.ipynb](https://github.com/ericodle/GINSA/blob/main/GINSA.ipynb) and then click the "Open in Colab" button at the top left.
 
-Next, GINSA will ask for the species you wish to search. 
-Here, you can search either the full genus + species name, as in "Lecudina longissima", or just a genus, as in "Labyrinthula".
 
-```sh
-'Enter your target genus and species (e.g. Lecudina longissima):'  Lecudina longissima
-```
-
-Confirmation statements should follow:
-
-```sh
-'Genus:  Lecudina'
-'Species:  longissima'
-'Number of occurrences found: 26'
-```
-
-GINSA will then proceed with the analysis, informing you of each step being performed in real time.
-Note: Analysis time depends on internet connection speed and number of occurrences.
-
-## Completion of Analysis
+# Description of features
 
 When GINSA completes its process, you will find that your project folder now contains a unique sub-folder for each occurrence, as well as several output files. <br />
 
