@@ -7,8 +7,8 @@ setup(
     package_dir={'': 'src'},
     entry_points={
         'console_scripts': [
-            'ginsa-cli = ginsa.ginsa_cli:main',
-            'ginsa-gui = ginsa.ginsa_gui:main',
+            'GINSA_cli = ginsa.GINSA_cli:main',
+            'GINSA_gui = ginsa.GINSA_gui:main',
         ],
     },
     
