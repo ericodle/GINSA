@@ -7,7 +7,7 @@ name = "ginsa"
 authors = [
     {name = "Eric Odle", email = "eo@hokudai.me.uk"},
 ]
-readme = "README.md"
+description = "GINSA"
 classifiers = [
     "License :: OSI Approved :: MIT License",
 ]
@@ -15,4 +15,4 @@ requires-python = ">=3.6"
 version = "0.1.0"
 
 [project.scripts]
-GINSA_gui = "GINSA:GINSA_gui"
+GINSA_gui = "ginsa.GINSA_gui:main"
