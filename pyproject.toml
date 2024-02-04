@@ -1,7 +1,18 @@
 [build-system]
-requires = ["setuptools>=42", "wheel", "setuptools_scm>=3.4.3"]
-build-backend = "setuptools.build_meta"
+requires = ["flit_core >=3.2,<4"]
+build-backend = "flit_core.buildapi"
 
 [project]
 name = "ginsa"
+authors = [
+    {name = "Eric Odle", email = "eo@hokudai.me.uk"},
+]
+readme = "README.md"
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+]
+requires-python = ">=3.6"
 version = "0.1.0"
+
+[project.scripts]
+GINSA_gui = "GINSA:GINSA_gui"
