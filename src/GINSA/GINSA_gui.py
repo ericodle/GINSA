@@ -3,19 +3,14 @@ from tkinter import filedialog, messagebox
 from GINSA import GINSAClass
 
 class GINSAGUI:
-        """
+        
+    """
     GINSAGUI - GUI for GINSA Analysis
 
     This class defines a simple GUI for performing analysis using GINSA.
 
     Parameters:
     - master (tk.Tk): The root window for the GUI.
-
-    Methods:
-    - __init__(self, master): Initializes the GINSAGUI instance.
-    - browse_project_dir(self): Opens a file dialog to browse and select the project directory.
-    - execute_analysis(self): Executes the GINSA analysis using the provided project directory and species name.
-    ```
 
     Note: Requires the GINSAClass.
     """
