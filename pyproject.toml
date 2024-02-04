@@ -5,15 +5,3 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "ginsa"
 version = "0.1.0"
-scripts = ["GINSA_cli = GINSA.GINSA_cli:main", "GINSA_gui = GINSA.GINSA_gui:main", "suffix_adder = GINSA.suffix_adder:main"]
-
-classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Operating System :: OS Independent"]
-
-[project.entry-points]
-"GINSA_cli" = "GINSA.GINSA_cli:main"
-"GINSA_gui" = "GINSA.GINSA_gui:main"
-"suffix_adder" = "GINSA.suffix_adder:main"
-
-
-[project.urls]
-Homepage = "https://github.com/ericodle/GINSA"
