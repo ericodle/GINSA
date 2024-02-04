@@ -4,20 +4,10 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "ginsa"
-version = "2024.02.04"
-authors = [{ name="Eric Odle", email="odle.eric1@gmail.com" }]
-description = "Python package that exploits GBIF's biogeographic data and sequence links"
-readme = "README.md"
-keywords = ["Biodiversity", "ENA", "Biogeography", "Environmental Sequencing", "GBIF", "Data Accumulator"]
-dependencies = [
-  "httpx",
-  "gidgethub[httpx]>4.0.0",
-  "django>2.1; os_name != 'nt'",
-  "django>2.0; os_name == 'nt'",
-]
-requires-python = ">= 3.8"
+version = "0.1.0"
+scripts = ["GINSA_cli = GINSA.GINSA_cli:main", "GINSA_gui = GINSA.GINSA_gui:main", "suffix_adder = GINSA.suffix_adder:main"]
+
 classifiers = ["Programming Language :: Python :: 3", "License :: OSI Approved :: MIT License", "Operating System :: OS Independent"]
 
 [project.urls]
 Homepage = "https://github.com/ericodle/GINSA"
-Issues = "https://github.com/ericodle/GINSA/issues"
