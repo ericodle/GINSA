@@ -9,7 +9,8 @@ from Bio import SeqIO
 import matplotlib.pyplot as plt
 from requests.exceptions import HTTPError
 import sys
-
+import tkinter as tk
+from tkinter import filedialog, messagebox
 
 class GINSAClass:
 
@@ -809,10 +810,6 @@ class GINSAClass:
         print("Analyzing the sequences in your master FASTA file.")
         self.analyze_nucleotide_freqs(fasta_path, proj_dir)
 
-import tkinter as tk
-from tkinter import filedialog, messagebox
-from GINSA import GINSAClass
-
 class GINSAGUI:
         
     """
@@ -879,18 +876,9 @@ class GINSAGUI:
         except Exception as e:
             messagebox.showerror("Error", f"An error occurred during analysis: {str(e)}")
 
-if __name__ == "__main__":
+def main():
     root = tk.Tk()
     app = GINSAGUI(root)
     root.mainloop()
-
-    # Check if both project directory and species name are provided as arguments
-    if len(sys.argv) != 3:
-        print("Usage: python script_name.py <project_directory_path> <species_name>")
-        sys.exit(1)
-
-    proj_dir = sys.argv[1]
-    species_name = sys.argv[2]
-
     ginsa_instance = GINSAClass(proj_dir, species_name)
     ginsa_instance.main()
