@@ -35,7 +35,7 @@ Beginners, please follow along with the instructions provided below.</p>
 # Prerequisites
 ## Install Python3
 GINSA was developed using the Python(3) programming language. 
-Installing Python3 is therefore required to run GINSA.
+Installing Python3 is therefore required to use this tool.
 Python3 can be downloaded here: https://www.python.org/downloads/
 
 ## For Mac users
@@ -49,48 +49,46 @@ To correct this, perform the following steps in your working environment:
 ### Step 2: Configure system SSL certificates
 Find the path to your Python distribution's Certificates.command, then enter the following command.
 Our system used Python 3.12, therefore the command looked like this:
+
   ```sh
   sudo /Applications/Python\ 3.12/Install\ Certificates.command
   ```
-Enter your password to make the changes.
 Your system should now have the required SSL certificates to run GINSA.
 
-## Install GINSA
-pyPI pip install somethingsomething
-
 # Quick Start
+
+## Install GINSA using PIP
+To install GINSA using PIP, simply open a terminal emulator (command prompt, terminal, etc.) and run:
+
+  ```sh
+  pip install GINSA
+  ```
+Note: while not necessary, it is best practice to install and use GINSA in a virtual environment.
 
 ## Option 1: Run GINSA by graphical user interface (GUI)
 
 This is the point-and-click method of interfacing with software with which most users are familiar.
+In your working environment, simply enter:
+  ```sh
+  GINSA_gui
+  ```
+From here, simply select your project directory, type in your taxon of interest, and click "Execute Analysis".
 
-## OPTION 2: Run GINSA by command line
+## OPTION 2: Run GINSA by command line interface
 
-This interface method allows more experienced users to run GINSA in a terminal emulator (command prompt, terminal, etc.) with text commands.
-
-### Start the program
+This interface method allows more experienced users to run GINSA in with text commands.
+In your working environment, simply enter GINSA_cli followed by the path to your project directory and your taxon of interest in quotation marks.
+It should look something like this:
 
   ```sh
-  # Replace "your_folderpath_here" with the actual folder where you want the project to go.
-  cd /your_folderpath_here
-  git clone https://github.com/ericodle/GINSA
+  GINSA_cli /eo/Desktop/test "Lecudina tuzetae"
   ```
-
-### Run program
-
-Open up a command line prompt (terminal) and execute the following command:
-
-```sh
-# Run the Python script titled GINSA.py
-python3 path_to_your_file/GINSA.py
-```
-
 
 # Description of features
 
-When GINSA completes its process, you will find that your project folder now contains a unique sub-folder for each occurrence, as well as several output files. <br />
+When GINSA completes its run, your project folder will contain unique sub-folders for each occurrence as well as several output files. <br />
 
-Below is a description of each output file, using the search term "Lecudina longissima" as an example.
+Below is a description of each output file using the example search taxon term "Lecudina longissima".
 
 - [ ] sifting_results.png
 
