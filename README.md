@@ -59,11 +59,11 @@ To install GINSA using PIP, simply open a terminal emulator (command prompt, ter
   ```sh
   pip install GINSA
   ```
-Note: while not necessary, it is best practice to install and use GINSA in a virtual environment.
+While not necessary, we recommend using GINSA in a virtual environment.
 
 ## Option 1: Run GINSA by graphical user interface (GUI)
 
-This is the point-and-click method of interfacing with software with which most users are familiar.
+This is the point-and-click method of interfacing with software.
 In your working environment, simply enter:
   ```sh
   GINSA_gui
@@ -72,7 +72,7 @@ From here, simply select your project directory, type in your taxon of interest,
 
 ## OPTION 2: Run GINSA by command line interface
 
-This interface method allows more experienced users to run GINSA in with text commands.
+This interface method allows more experienced users to run GINSA with text commands.
 In your working environment, simply enter GINSA_cli followed by the path to your project directory and your taxon of interest in quotation marks.
 It should look something like this:
 
