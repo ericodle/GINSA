@@ -31,9 +31,9 @@ GINSA is a unique tool utilizing the GBIF interface. In the spirit of GBIF, the 
 # Prerequisites
 ## Install Python3
 GINSA was developed using the Python programming language. 
-Installing Python, specifically version 3.12 is therefore recommended.
-Using earlier versions of Python, particularly prior to version 3.9, may cause dependency errors.
-Python3 can be downloaded here: https://www.python.org/downloads/
+Installing Python, specifically newer versions (>=3.10) is therefore recommended.
+Using earlier versions of Python may cause dependency errors.
+Python3 can be downloaded at: https://www.python.org/downloads/
 
 ## For Mac users
 Newer versions of Python lack certain SSL (secure sockets layer) certificates on MacOS.
