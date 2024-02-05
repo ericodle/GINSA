@@ -710,109 +710,87 @@ class GINSAClass:
     def main(self):
         """
         Main function driving GINSA analysis.
-
-        Parameters:
-        - proj_dir (str): Path to project directory.
-        - species_name (str): Name of species for analysis.
         """
-        if proj_dir is not None and species_name is not None:
-            # Use proj_dir and species_name in analysis logic
-            self.proj_dir = proj_dir
-            self.species_name = species_name
-            self.gen_sp = species_name.split()
+        if self.proj_dir is not None and self.species_name is not None:
 
-            if len(self.gen_sp) == 2:
-                self.genus = self.gen_sp[0]
-                self.species = self.gen_sp[1]
-            elif len(self.gen_sp) == 1:
-                self.genus = self.gen_sp[0]
-                self.species = self.gen_sp[0]
+            if len(self.gen_sp) == 1:
+                print("Genus:", self.genus)
+                print("Only Genus provided. Search will be based on:", self.genus)
+
+            elif self.gen_sp:
+                print("Genus:", self.genus)
+                print("Species:", self.species)
+
+            elif len(self.gen_sp) > 2:
+                print("Too many search terms.")
+
             else:
-                self.genus = None
-                self.species = None
-        else:
-            if self.proj_dir is None or self.species_name is None:
-                print("Error: project directory and species name are required.")
-                return
+                print("No search taxon entered.")
 
-        gen_sp = species_name.split()
+            # Ensure species_name is defined before using it
+            species_name = self.species_name  # Add this line
+            occurrence_ids, occurrence_data = self.search_species_occurrences(species_name)
 
-        if len(gen_sp) == 2:
-            genus = gen_sp[0]
-            print("Genus: ", genus)
-            species = gen_sp[1]
-            print("Species: ", species)
+            # Ensure proj_dir is defined before using it
+            proj_dir = self.proj_dir  # Add this line
+            self.create_folders(occurrence_ids, proj_dir)
 
-        elif len(gen_sp) == 1:
-            genus = gen_sp[0]
-            print("Genus: ", genus)
-            species = gen_sp[0]
-            print("Only Genus provided. Search will be based on: ", species)
+            num_occurrences = len(occurrence_ids)
 
-        elif len(gen_sp) > 2:
-            print("Too many search terms.")
+            if num_occurrences > 0:
+                print(f"Number of occurrences found: {num_occurrences}")
 
-        else:
-            print("No search taxon entered.")
+            else:
+                print("No occurrences found for this taxon.")
 
-        occurrence_ids, occurrence_data = self.search_species_occurrences( species_name)
+            if num_occurrences > 300:
+                print("There seem to be many ocurrences of this taxon in GBIF. Please ensure that you have sufficient storage.")
 
-        num_occurrences = len(occurrence_ids)
+            self.create_folders(occurrence_ids, proj_dir)
+            print("Subdirectory folders created")
+            print("Gathering biogeography data on all the occurrences found in GBIF...")
 
-        if num_occurrences > 0:
-            print(f"Number of occurrences found: {num_occurrences}")
+            self.generate_csv(occurrence_ids, occurrence_data, proj_dir)
 
-        else:
-            print("No occurrences found for this taxon.")
+            print("Occurrence metadata CSV created")
+            csv_file = proj_dir+"/occurrences.csv"
 
-        if num_occurrences > 300:
-            print("There seem to be many ocurrences of this taxon in GBIF. Please ensure that you have sufficient storage.")
+            print("Grabbing FASTA and MAPSeq files from ENA via GBIF...")
+            self.ssu_fasta_grab(csv_file, proj_dir)
+            self.mapseq_grab(csv_file, proj_dir)
 
-        self.create_folders(occurrence_ids, proj_dir)
-        print("Subdirectory folders created")
-        print("Gathering biogeography data on all the occurrences found in GBIF...")
+            print("Unpacking compressed files...")
+            self.process_directory(proj_dir)
 
-        self.generate_csv(occurrence_ids, occurrence_data, proj_dir)
+            print("Searching MAPSeq files...")
+            self.analyze_subdir_mapseq(proj_dir, genus, species)
 
-        print("Occurrence metadata CSV created")
-        csv_file = proj_dir+"/occurrences.csv"
+            print("Searching FASTA files...")
+            self.analyze_subdir_fasta(proj_dir)
 
-        print("Grabbing FASTA and MAPSeq files from ENA via GBIF...")
-        self.ssu_fasta_grab(csv_file, proj_dir)
-        self.mapseq_grab(csv_file, proj_dir)
+            print("Sequence acquisition complete! Analyzing your sequences and saving them to a FASTA file.")
 
-        print("Unpacking compressed files...")
-        self.process_directory(proj_dir)
+            print("Checking sub-folders for new sequences.")
+            self.check_dir(proj_dir)
 
-        print("Searching MAPSeq files...")
-        self.analyze_subdir_mapseq(proj_dir, genus, species)
+            print("Aggregating sequences into a master csv file.")
+            fasta_path = self.combine_csv_files(proj_dir)
 
-        print("Searching FASTA files...")
-        self.analyze_subdir_fasta(proj_dir)
+            if fasta_path is None:
+                print("Exiting program. No sequences found.")
+                sys.exit()
 
-        print("Sequence acquisition complete! Analyzing your sequences and saving them to a FASTA file.")
+            print("Generating a master FASTA file containing your new sequences.")
+            self.seq_master_lengths(fasta_path, proj_dir)
 
-        print("Checking sub-folders for new sequences.")
-        self.check_dir(proj_dir)
-
-        print("Aggregating sequences into a master csv file.")
-        fasta_path = self.combine_csv_files(proj_dir)
-
-        if fasta_path is None:
-            print("Exiting program. No sequences found.")
-            sys.exit()
-
-        print("Generating a master FASTA file containing your new sequences.")
-        self.seq_master_lengths(fasta_path, proj_dir)
-
-        print("Analyzing the sequences in your master FASTA file.")
-        self.analyze_nucleotide_freqs(fasta_path, proj_dir)
+            print("Analyzing the sequences in your master FASTA file.")
+            self.analyze_nucleotide_freqs(fasta_path, proj_dir)
 
 
 def main():
     # Check if both project directory and species name are provided as command-line arguments
     if len(sys.argv) != 3:
-        print("Usage: python script_name.py <project_directory_path> <species_name>")
+        print("Usage:GINSA_cli <project_directory_path> '<species_name>'")
         sys.exit(1)
 
     proj_dir = sys.argv[1]
