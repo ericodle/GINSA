@@ -68,3 +68,4 @@ dependencies = [
 
 [project.scripts]
 GINSA_gui = "GINSA.GINSA_gui:main"
+GINSA_cli = "GINSA.GINSA_cli:main"
