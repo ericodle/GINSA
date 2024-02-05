@@ -3,7 +3,7 @@ requires = ["flit_core >=3.2,<4"]
 build-backend = "flit_core.buildapi"
 
 [project]
-name = "ginsa"
+name = "GINSA"
 authors = [
     {name = "Eric Odle", email = "eo@hokudai.me.uk"},
 ]
@@ -15,4 +15,4 @@ requires-python = ">=3.6"
 version = "0.1.0"
 
 [project.scripts]
-GINSA_gui = "ginsa.GINSA_gui:main"
+GINSA_gui = "GINSA.GINSA_gui:main"
