@@ -26,10 +26,6 @@ We tested GINSA on multiple taxa across the Tree of Life.
 
 GINSA is a unique tool utilizing the GBIF interface. In the spirit of GBIF, the code for GINSA is openly available, and we encourage community collaboration. Feel free to fork.
 
-Beginners, please follow along with the instructions provided below.</p>
-  
-[GINSA Overview Video](https://www.youtube.com/watch?v=PrWM5vmqYO8)
-
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 # Prerequisites
