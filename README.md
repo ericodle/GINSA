@@ -146,11 +146,11 @@ Below is a description of each output file using the example search taxon term "
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-## Citing Our Research
+## Citing our work
 
-Our research paper provides a comprehensive overview of the methodology, results, and insights derived from this repository. You can access the full paper when available.
+Our paper provides an overview of the methodology and results used in this repository.
 
-If you find our research and code useful in your work, we kindly request that you cite our associated research paper in your publications. Please use the following citation:
+If you find GINSA useful, we ask that you cite the following: coming soon
 
 
 
