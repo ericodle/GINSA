@@ -39,8 +39,8 @@ Newer versions of Python lack certain SSL (secure sockets layer) certificates on
 To correct this, perform the following steps in your working environment:
 ### Step 1: Install certifi
   ```sh
-  python3 -m pip install --upgrade pip 
-  pip install --upgrade certifi
+  python3 -m pip3 install --upgrade pip3 
+  pip3 install --upgrade certifi
   ```
 ### Step 2: Configure system SSL certificates
 Find the path to your Python distribution's Certificates.command, then enter the following command.
@@ -57,7 +57,7 @@ Your system should now have the required SSL certificates to run GINSA.
 To install GINSA using PIP, simply open a terminal emulator (command prompt, terminal, etc.) and run:
 
   ```sh
-  pip install GINSA
+  pip3 install GINSA
   ```
 While not necessary, we recommend using GINSA in a virtual environment.
 
