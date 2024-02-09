@@ -80,7 +80,7 @@ It should look something like this:
   GINSA_cli /eo/Desktop/test "Lecudina tuzetae"
   ```
 
-# Description of features
+# Description of Features
 
 When GINSA completes its run, your project folder will contain unique sub-folders for each occurrence as well as several output files. <br />
 
