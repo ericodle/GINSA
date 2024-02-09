@@ -19,7 +19,6 @@
 
 GINSA is a Python program that exploits GBIF's biogeographic data and sequence links.
 Users input their species of interest, then the program gathers data on each GBIF occurrence.
-Data includes the GBIF occurrence ID, latitude/longitude, and country of origin -- all saved to a CSV spreadsheet.
 GINSA downloads SSU rDNA sequences from each occurrence, combining them into a single FASTA file.
 
 We tested GINSA on multiple taxa across the Tree of Life.
