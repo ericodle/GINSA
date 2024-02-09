@@ -108,13 +108,12 @@ Below is a description of each output file using the example "Lecudina longissim
 
 - [ ] <img src="https://github.com/ericodle/GINSA/blob/main/docs/occurrences.csv" alt="occurrences.csv" width="350" height="350">
 
-  This file is a basic spreadsheet that can be opened in Excel or any other CSV reader. Data column 1 contains the GBIF occurrence IDs found during the taxon search, while data column 2 contains the country code from which the sample was taken. Data columns 3 and 4 contain latitude and longitude coordinates for each occurrence. Finally, data column 5, labeled "prefix_text", contains the EMBL ENA project title sifted from the GBIF API for each occurrence. "prefix_text" can be replaced into the ENA API link, leading GINSA to the download page for each SSU FASTA and MAPseq file.
+  This file is a basic spreadsheet that can be opened in Excel or any other CSV reader.
 
 
 - [ ] <img src="https://github.com/ericodle/GINSA/blob/main/docs/seq_master.fasta" alt="seq_master.fasta" width="350" height="350">
 
   This file is the primary output of GINSA -- a FASTA file containing all the gathered SSU sequences for all occurrences of a species on GBIF. From this FASTA file, researchers can perform downstream phylogenetic analysis and modify the sequence labels with occurrence metadata from occurrences.csv to explore biogeographic patterns. The supplemental script suffix_adder.py is included in the "misc" folder as a tool to add the country code to the end of each sequence name. Moreover, users are encouraged to play with the code and modify it to their particular research needs.
-
 
 
 # Key Functions
