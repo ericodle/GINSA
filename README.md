@@ -84,7 +84,7 @@ It should look something like this:
 
 When GINSA completes its run, your project folder will contain unique sub-folders for each occurrence as well as several output files. <br />
 
-Below is a description of each output file using the example search taxon term "Lecudina longissima".
+Below is a description of each output file using the example "Lecudina longissima".
 
 - [ ] sifting_results.png
 
