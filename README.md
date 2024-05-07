@@ -2,7 +2,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/github_username/repo_name">
-    <img src="https://github.com/ericodle/GINSA/blob/main/docs/logo3.jpg" alt="Logo" width="600" height="300">
+    <img src="docs/logo3.jpg" width="350" title="logo">
   
   </a>
 
